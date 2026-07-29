@@ -37,7 +37,8 @@
     {
       "id": "hairness-context-pick-target",
       "capability": "hairness-context-pick-target",
-      "description": "Select one known Hairness Target and load only its current inspectable context."
+      "description": "Select one known Hairness Target and load only its current inspectable context.",
+      "forEach": "target"
     },
     {
       "id": "hairness-context-any-target",
@@ -49,7 +50,8 @@
     {
       "id": "hairness-context-pick-target",
       "capability": "hairness-context-pick-target",
-      "description": "Select one known Hairness Target and load only its current inspectable context."
+      "description": "Select one known Hairness Target and load only its current inspectable context.",
+      "forEach": "target"
     },
     {
       "id": "hairness-context-any-target",

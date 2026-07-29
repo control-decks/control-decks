@@ -104,9 +104,12 @@ for (const gameId of gameIds) {
     if (assetCards.size !== manifest.cards.length || [...commands].some((id) => !assetCards.has(id))) {
       fail(`Asset and HACP manifest diverge: ${deckId}`);
     }
-    const exposed = new Set(asset.skills.map(({ id }) => id));
-    if (asset.commands.length !== exposed.size || asset.commands.some(({ id }) => !exposed.has(id))) {
-      fail(`Asset skill and command projections diverge: ${deckId}`);
+    const accessors = [...asset.skills, ...asset.commands];
+    if (accessors.some(({ capability }) => !assetCards.has(capability))) {
+      fail(`Asset accessor references an unknown Capability: ${deckId}`);
+    }
+    if (accessors.some(({ forEach }) => forEach && !["workspace", "workstream", "target"].includes(forEach))) {
+      fail(`Asset accessor has an invalid forEach value: ${deckId}`);
     }
   }
 }
