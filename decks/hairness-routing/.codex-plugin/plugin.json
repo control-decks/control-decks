@@ -1,0 +1,27 @@
+{
+  "name": "hairness-routing",
+  "version": "0.1.0",
+  "description": "Refresh and route work through resolved Home identities.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/hairness-routing",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Hairness Routing",
+    "shortDescription": "Refresh and route work through resolved Home identities.",
+    "longDescription": "Refresh and route work through resolved Home identities. Human-invoked HACP Draft 0.4 cards from the Hairness Home Game.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": [
+      "Refresh Context"
+    ],
+    "brandColor": "#7357FF",
+    "defaultPrompt": [
+      "$hairness-routing:refresh-context Use this card on the current working object."
+    ]
+  }
+}

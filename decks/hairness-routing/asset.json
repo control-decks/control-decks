@@ -1,0 +1,56 @@
+{
+  "$schema": "https://hairness.dev/schema/asset.json",
+  "name": "control-decks/hairness-routing",
+  "version": "0.1.0",
+  "description": "Refresh and route work through resolved Home identities.",
+  "prefix": "hairness-routing",
+  "files": [
+    "hacp.deck.json",
+    "capabilities/refresh-context.md",
+    "capabilities/route-workspace.md",
+    "capabilities/route-workstream.md",
+    "capabilities/route-target.md",
+    "capabilities/show-hud.md"
+  ],
+  "capabilities": [
+    {
+      "id": "refresh-context",
+      "path": "capabilities/refresh-context.md",
+      "description": "Re-read the authoritative current context for the bound Home identity and report material changes."
+    },
+    {
+      "id": "route-workspace",
+      "path": "capabilities/route-workspace.md",
+      "description": "Resolve the unique owning Workspace for the current object."
+    },
+    {
+      "id": "route-workstream",
+      "path": "capabilities/route-workstream.md",
+      "description": "Resolve the unique continuing Workstream for the current object."
+    },
+    {
+      "id": "route-target",
+      "path": "capabilities/route-target.md",
+      "description": "Resolve the unique Target that owns the requested product mutation."
+    },
+    {
+      "id": "show-hud",
+      "path": "capabilities/show-hud.md",
+      "description": "Render the smallest useful live Hairness HUD for the current context."
+    }
+  ],
+  "skills": [
+    {
+      "id": "refresh-context",
+      "capability": "refresh-context",
+      "description": "Re-read the authoritative current context for the bound Home identity and report material changes."
+    }
+  ],
+  "commands": [
+    {
+      "id": "refresh-context",
+      "capability": "refresh-context",
+      "description": "Re-read the authoritative current context for the bound Home identity and report material changes."
+    }
+  ]
+}

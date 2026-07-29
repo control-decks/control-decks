@@ -1,0 +1,60 @@
+{
+  "$schema": "https://hairness.dev/schema/asset.json",
+  "name": "control-decks/conversation-evidence",
+  "version": "0.1.0",
+  "description": "Expose concrete evidence and examples around a thought.",
+  "prefix": "conversation-evidence",
+  "files": [
+    "hacp.deck.json",
+    "capabilities/show-snippets.md",
+    "capabilities/show-use-cases.md",
+    "capabilities/check-assumptions.md",
+    "capabilities/show-counterexamples.md"
+  ],
+  "capabilities": [
+    {
+      "id": "show-snippets",
+      "path": "capabilities/show-snippets.md",
+      "description": "Show the smallest concrete source snippets needed to ground the current claim or proposal."
+    },
+    {
+      "id": "show-use-cases",
+      "path": "capabilities/show-use-cases.md",
+      "description": "Render a small set of distinct concrete use cases for the current object."
+    },
+    {
+      "id": "check-assumptions",
+      "path": "capabilities/check-assumptions.md",
+      "description": "Annotate the current object with its material supported, unsupported, and contradicted assumptions."
+    },
+    {
+      "id": "show-counterexamples",
+      "path": "capabilities/show-counterexamples.md",
+      "description": "Render the smallest concrete counterexamples that test the current claim's boundary."
+    }
+  ],
+  "skills": [
+    {
+      "id": "show-snippets",
+      "capability": "show-snippets",
+      "description": "Show the smallest concrete source snippets needed to ground the current claim or proposal."
+    },
+    {
+      "id": "show-use-cases",
+      "capability": "show-use-cases",
+      "description": "Render a small set of distinct concrete use cases for the current object."
+    }
+  ],
+  "commands": [
+    {
+      "id": "show-snippets",
+      "capability": "show-snippets",
+      "description": "Show the smallest concrete source snippets needed to ground the current claim or proposal."
+    },
+    {
+      "id": "show-use-cases",
+      "capability": "show-use-cases",
+      "description": "Render a small set of distinct concrete use cases for the current object."
+    }
+  ]
+}

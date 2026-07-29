@@ -1,0 +1,12 @@
+{
+  "name": "session-lifecycle",
+  "version": "0.1.0",
+  "description": "Open, rename, hand off, refresh, and close tasks.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/session-lifecycle",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT"
+}

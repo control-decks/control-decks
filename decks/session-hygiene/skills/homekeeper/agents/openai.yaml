@@ -1,0 +1,6 @@
+interface:
+  display_name: "Session Hygiene · Homekeeper"
+  short_description: "Maintain local Home, Desk, and task metadata while other session"
+  default_prompt: "Use $session-hygiene:homekeeper on the current working object."
+policy:
+  allow_implicit_invocation: false

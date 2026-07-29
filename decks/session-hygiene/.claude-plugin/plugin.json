@@ -1,0 +1,12 @@
+{
+  "name": "session-hygiene",
+  "version": "0.1.0",
+  "description": "Keep long-lived sessions and their Home metadata clean.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/session-hygiene",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT"
+}

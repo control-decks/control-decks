@@ -1,0 +1,12 @@
+{
+  "name": "session-orchestration",
+  "version": "0.1.0",
+  "description": "Allocate bounded parallel or delegated work.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/session-orchestration",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT"
+}

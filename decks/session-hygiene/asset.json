@@ -1,0 +1,60 @@
+{
+  "$schema": "https://hairness.dev/schema/asset.json",
+  "name": "control-decks/session-hygiene",
+  "version": "0.1.0",
+  "description": "Keep long-lived sessions and their Home metadata clean.",
+  "prefix": "session-hygiene",
+  "files": [
+    "hacp.deck.json",
+    "capabilities/homekeeper.md",
+    "capabilities/clear-homekeeper.md",
+    "capabilities/park-session.md",
+    "capabilities/archive-session.md"
+  ],
+  "capabilities": [
+    {
+      "id": "homekeeper",
+      "path": "capabilities/homekeeper.md",
+      "description": "Maintain local Home, Desk, and task metadata while other sessions stay focused on their own work."
+    },
+    {
+      "id": "clear-homekeeper",
+      "path": "capabilities/clear-homekeeper.md",
+      "description": "Clear the active Homekeeper role policy."
+    },
+    {
+      "id": "park-session",
+      "path": "capabilities/park-session.md",
+      "description": "Preserve a compact handoff and leave the current task resumable without closing it."
+    },
+    {
+      "id": "archive-session",
+      "path": "capabilities/archive-session.md",
+      "description": "Archive the current task after its resumable state is preserved."
+    }
+  ],
+  "skills": [
+    {
+      "id": "homekeeper",
+      "capability": "homekeeper",
+      "description": "Maintain local Home, Desk, and task metadata while other sessions stay focused on their own work."
+    },
+    {
+      "id": "clear-homekeeper",
+      "capability": "clear-homekeeper",
+      "description": "Clear the active Homekeeper role policy."
+    }
+  ],
+  "commands": [
+    {
+      "id": "homekeeper",
+      "capability": "homekeeper",
+      "description": "Maintain local Home, Desk, and task metadata while other sessions stay focused on their own work."
+    },
+    {
+      "id": "clear-homekeeper",
+      "capability": "clear-homekeeper",
+      "description": "Clear the active Homekeeper role policy."
+    }
+  ]
+}

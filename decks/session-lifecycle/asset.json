@@ -1,0 +1,76 @@
+{
+  "$schema": "https://hairness.dev/schema/asset.json",
+  "name": "control-decks/session-lifecycle",
+  "version": "0.1.0",
+  "description": "Open, rename, hand off, refresh, and close tasks.",
+  "prefix": "session-lifecycle",
+  "files": [
+    "hacp.deck.json",
+    "capabilities/open-task.md",
+    "capabilities/handoff.md",
+    "capabilities/rename-session.md",
+    "capabilities/update-session.md",
+    "capabilities/close-session.md"
+  ],
+  "capabilities": [
+    {
+      "id": "open-task",
+      "path": "capabilities/open-task.md",
+      "description": "Create one new task with a self-contained entry prompt derived from the bound object."
+    },
+    {
+      "id": "handoff",
+      "path": "capabilities/handoff.md",
+      "description": "Prepare or perform one resumable task handoff while preserving the bound context and current authority."
+    },
+    {
+      "id": "rename-session",
+      "path": "capabilities/rename-session.md",
+      "description": "Rename the current task from its resolved owner, axis, objective, and emoji."
+    },
+    {
+      "id": "update-session",
+      "path": "capabilities/update-session.md",
+      "description": "Refresh the current task summary from the latest accepted context."
+    },
+    {
+      "id": "close-session",
+      "path": "capabilities/close-session.md",
+      "description": "Close or archive the current task after preserving the smallest resumable state."
+    }
+  ],
+  "skills": [
+    {
+      "id": "open-task",
+      "capability": "open-task",
+      "description": "Create one new task with a self-contained entry prompt derived from the bound object."
+    },
+    {
+      "id": "handoff",
+      "capability": "handoff",
+      "description": "Prepare or perform one resumable task handoff while preserving the bound context and current authority."
+    },
+    {
+      "id": "rename-session",
+      "capability": "rename-session",
+      "description": "Rename the current task from its resolved owner, axis, objective, and emoji."
+    }
+  ],
+  "commands": [
+    {
+      "id": "open-task",
+      "capability": "open-task",
+      "description": "Create one new task with a self-contained entry prompt derived from the bound object."
+    },
+    {
+      "id": "handoff",
+      "capability": "handoff",
+      "description": "Prepare or perform one resumable task handoff while preserving the bound context and current authority."
+    },
+    {
+      "id": "rename-session",
+      "capability": "rename-session",
+      "description": "Rename the current task from its resolved owner, axis, objective, and emoji."
+    }
+  ]
+}

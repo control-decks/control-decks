@@ -1,0 +1,50 @@
+{
+  "$schema": "https://hairness.dev/schema/asset.json",
+  "name": "control-decks/conversation-extension",
+  "version": "0.1.0",
+  "description": "Move a thought one useful step beyond its current edge.",
+  "prefix": "conversation-extension",
+  "files": [
+    "hacp.deck.json",
+    "capabilities/further.md",
+    "capabilities/implications.md",
+    "capabilities/alternatives.md",
+    "capabilities/counterpoint.md"
+  ],
+  "capabilities": [
+    {
+      "id": "further",
+      "path": "capabilities/further.md",
+      "description": "Extend the strongest supported edge of the current object by one non-obvious implication."
+    },
+    {
+      "id": "implications",
+      "path": "capabilities/implications.md",
+      "description": "Derive the most material direct implications of the bound object."
+    },
+    {
+      "id": "alternatives",
+      "path": "capabilities/alternatives.md",
+      "description": "Surface a small set of meaningfully different alternatives to the current direction."
+    },
+    {
+      "id": "counterpoint",
+      "path": "capabilities/counterpoint.md",
+      "description": "Develop the strongest grounded counterpoint to the current claim."
+    }
+  ],
+  "skills": [
+    {
+      "id": "further",
+      "capability": "further",
+      "description": "Extend the strongest supported edge of the current object by one non-obvious implication."
+    }
+  ],
+  "commands": [
+    {
+      "id": "further",
+      "capability": "further",
+      "description": "Extend the strongest supported edge of the current object by one non-obvious implication."
+    }
+  ]
+}

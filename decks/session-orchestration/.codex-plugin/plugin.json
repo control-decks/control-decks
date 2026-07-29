@@ -1,0 +1,29 @@
+{
+  "name": "session-orchestration",
+  "version": "0.1.0",
+  "description": "Allocate bounded parallel or delegated work.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/session-orchestration",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Session Orchestration",
+    "shortDescription": "Allocate bounded parallel or delegated work.",
+    "longDescription": "Allocate bounded parallel or delegated work. Human-invoked HACP Draft 0.4 cards from the Session Game.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": [
+      "Spawn Agents",
+      "Generate Images"
+    ],
+    "brandColor": "#7357FF",
+    "defaultPrompt": [
+      "$session-orchestration:spawn-agents Use this card on the current working object.",
+      "$session-orchestration:generate-images Use this card on the current working object."
+    ]
+  }
+}

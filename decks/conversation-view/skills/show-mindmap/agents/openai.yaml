@@ -1,0 +1,6 @@
+interface:
+  display_name: "Conversation View · Show Mindmap"
+  short_description: "Render the current object as a compact hierarchical mind map."
+  default_prompt: "Use $conversation-view:show-mindmap on the current working object."
+policy:
+  allow_implicit_invocation: false

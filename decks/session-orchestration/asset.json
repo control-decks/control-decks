@@ -1,0 +1,66 @@
+{
+  "$schema": "https://hairness.dev/schema/asset.json",
+  "name": "control-decks/session-orchestration",
+  "version": "0.1.0",
+  "description": "Allocate bounded parallel or delegated work.",
+  "prefix": "session-orchestration",
+  "files": [
+    "hacp.deck.json",
+    "capabilities/spawn-agents.md",
+    "capabilities/generate-images.md",
+    "capabilities/delegate-task.md",
+    "capabilities/parallelize.md",
+    "capabilities/wait-for-tasks.md"
+  ],
+  "capabilities": [
+    {
+      "id": "spawn-agents",
+      "path": "capabilities/spawn-agents.md",
+      "description": "Spawn the requested count of agents on independent bounded slices of the current work."
+    },
+    {
+      "id": "generate-images",
+      "path": "capabilities/generate-images.md",
+      "description": "Generate the requested count of images from the bound visual brief."
+    },
+    {
+      "id": "delegate-task",
+      "path": "capabilities/delegate-task.md",
+      "description": "Delegate one bounded task to one capable agent and return its addressable result."
+    },
+    {
+      "id": "parallelize",
+      "path": "capabilities/parallelize.md",
+      "description": "Partition the current work into independent slices that can safely run concurrently."
+    },
+    {
+      "id": "wait-for-tasks",
+      "path": "capabilities/wait-for-tasks.md",
+      "description": "Wait for the bound tasks and return only changed, completed, or attention-needed state."
+    }
+  ],
+  "skills": [
+    {
+      "id": "spawn-agents",
+      "capability": "spawn-agents",
+      "description": "Spawn the requested count of agents on independent bounded slices of the current work."
+    },
+    {
+      "id": "generate-images",
+      "capability": "generate-images",
+      "description": "Generate the requested count of images from the bound visual brief."
+    }
+  ],
+  "commands": [
+    {
+      "id": "spawn-agents",
+      "capability": "spawn-agents",
+      "description": "Spawn the requested count of agents on independent bounded slices of the current work."
+    },
+    {
+      "id": "generate-images",
+      "capability": "generate-images",
+      "description": "Generate the requested count of images from the bound visual brief."
+    }
+  ]
+}

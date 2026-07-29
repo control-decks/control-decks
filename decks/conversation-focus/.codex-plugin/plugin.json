@@ -1,0 +1,29 @@
+{
+  "name": "conversation-focus",
+  "version": "0.1.0",
+  "description": "Change the semantic scale or axis of the current object.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/conversation-focus",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Conversation Focus",
+    "shortDescription": "Change the semantic scale or axis of the current object.",
+    "longDescription": "Change the semantic scale or axis of the current object. Human-invoked HACP Draft 0.4 cards from the Conversation Game.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": [
+      "Zoom In",
+      "Zoom Out"
+    ],
+    "brandColor": "#7357FF",
+    "defaultPrompt": [
+      "$conversation-focus:zoom-in Use this card on the current working object.",
+      "$conversation-focus:zoom-out Use this card on the current working object."
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "session-intents",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "session-intents/main-session",
+      "command": "main-session",
+      "kind": "control",
+      "mode": "guard",
+      "traits": [
+        "session-control",
+        "delegation-policy",
+        "main-session"
+      ],
+      "defaultBinding": "session",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "session-intents/control-state",
+      "duration": "until-clear",
+      "relations": {
+        "requiresDelegationTraits": [
+          "long-task"
+        ]
+      }
+    },
+    {
+      "id": "session-intents/clear-main-session",
+      "command": "clear-main-session",
+      "kind": "control",
+      "mode": "clear",
+      "traits": [
+        "deck-clear",
+        "mutation-safe"
+      ],
+      "defaultBinding": "session-intents/control-state",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "session-intents/control-state",
+      "duration": "once",
+      "relations": {
+        "clearsTraits": [
+          "main-session"
+        ]
+      }
+    },
+    {
+      "id": "session-intents/search-session",
+      "command": "search-session",
+      "kind": "operation",
+      "mode": "transform",
+      "traits": [
+        "read-only",
+        "semantic",
+        "research-intent"
+      ],
+      "defaultBinding": "current-research-question",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "session-intents/search-brief",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "session-intents/plan-session",
+      "command": "plan-session",
+      "kind": "operation",
+      "mode": "transform",
+      "traits": [
+        "read-only",
+        "semantic"
+      ],
+      "defaultBinding": "current-planning-subject",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "session-intents/planning-brief",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "session-intents/review-session",
+      "command": "review-session",
+      "kind": "operation",
+      "mode": "transform",
+      "traits": [
+        "read-only",
+        "semantic"
+      ],
+      "defaultBinding": "current-review-target",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "session-intents/review-brief",
+      "duration": "once",
+      "relations": {}
+    }
+  ]
+}

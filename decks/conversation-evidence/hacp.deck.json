@@ -1,0 +1,97 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "conversation-evidence",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "conversation-evidence/show-snippets",
+      "command": "show-snippets",
+      "kind": "presentation",
+      "mode": "render",
+      "traits": [
+        "read-only",
+        "evidence",
+        "presentation"
+      ],
+      "defaultBinding": "current-object-sources",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/presentation",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "conversation-evidence/show-use-cases",
+      "command": "show-use-cases",
+      "kind": "presentation",
+      "mode": "render",
+      "traits": [
+        "read-only",
+        "presentation",
+        "examples"
+      ],
+      "defaultBinding": "current-working-object",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/presentation",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "conversation-evidence/check-assumptions",
+      "command": "check-assumptions",
+      "kind": "operation",
+      "mode": "annotate",
+      "traits": [
+        "read-only",
+        "evidence-annotation",
+        "assumption-classification"
+      ],
+      "defaultBinding": "available-conversation",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/result",
+      "duration": "once",
+      "relations": {
+        "addsAnnotations": [
+          "conversation-evidence/assumptions-checked"
+        ],
+        "satisfiesTraits": [
+          "evidence",
+          "assumption-evidence"
+        ]
+      }
+    },
+    {
+      "id": "conversation-evidence/show-counterexamples",
+      "command": "show-counterexamples",
+      "kind": "presentation",
+      "mode": "render",
+      "traits": [
+        "read-only",
+        "presentation",
+        "evidence"
+      ],
+      "defaultBinding": "current-claim",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/testable-object"
+      ],
+      "produces": "hacp/presentation",
+      "duration": "once",
+      "relations": {}
+    }
+  ]
+}

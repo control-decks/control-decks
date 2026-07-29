@@ -1,0 +1,6 @@
+interface:
+  display_name: "Session Hygiene · Clear Homekeeper"
+  short_description: "Clear the active Homekeeper role policy."
+  default_prompt: "Use $session-hygiene:clear-homekeeper on the current working object."
+policy:
+  allow_implicit_invocation: false

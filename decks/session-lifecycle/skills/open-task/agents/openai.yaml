@@ -1,0 +1,6 @@
+interface:
+  display_name: "Session Lifecycle · Open Task"
+  short_description: "Create one new task with a self-contained entry prompt derived f"
+  default_prompt: "Use $session-lifecycle:open-task on the current working object."
+policy:
+  allow_implicit_invocation: false

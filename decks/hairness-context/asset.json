@@ -1,0 +1,60 @@
+{
+  "$schema": "https://hairness.dev/schema/asset.json",
+  "name": "control-decks/hairness-context",
+  "version": "0.1.0",
+  "description": "Bind conversation to resolved Home, Workspace, Workstream, or Target context.",
+  "prefix": "hairness-context",
+  "files": [
+    "hacp.deck.json",
+    "capabilities/hairness-context-pick-target.md",
+    "capabilities/hairness-context-any-target.md",
+    "capabilities/hairness-context-pick-workspace.md",
+    "capabilities/hairness-context-pick-workstream.md"
+  ],
+  "capabilities": [
+    {
+      "id": "hairness-context-pick-target",
+      "path": "capabilities/hairness-context-pick-target.md",
+      "description": "Select one known Hairness Target and load only its current inspectable context."
+    },
+    {
+      "id": "hairness-context-any-target",
+      "path": "capabilities/hairness-context-any-target.md",
+      "description": "Enumerate known Hairness Targets and select the unique semantic match for the current subject."
+    },
+    {
+      "id": "hairness-context-pick-workspace",
+      "path": "capabilities/hairness-context-pick-workspace.md",
+      "description": "Select one resolved Hairness Workspace and load its bounded durable context."
+    },
+    {
+      "id": "hairness-context-pick-workstream",
+      "path": "capabilities/hairness-context-pick-workstream.md",
+      "description": "Select one resolved Hairness Workstream and load its current resumable context."
+    }
+  ],
+  "skills": [
+    {
+      "id": "hairness-context-pick-target",
+      "capability": "hairness-context-pick-target",
+      "description": "Select one known Hairness Target and load only its current inspectable context."
+    },
+    {
+      "id": "hairness-context-any-target",
+      "capability": "hairness-context-any-target",
+      "description": "Enumerate known Hairness Targets and select the unique semantic match for the current subject."
+    }
+  ],
+  "commands": [
+    {
+      "id": "hairness-context-pick-target",
+      "capability": "hairness-context-pick-target",
+      "description": "Select one known Hairness Target and load only its current inspectable context."
+    },
+    {
+      "id": "hairness-context-any-target",
+      "capability": "hairness-context-any-target",
+      "description": "Enumerate known Hairness Targets and select the unique semantic match for the current subject."
+    }
+  ]
+}

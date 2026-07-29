@@ -1,0 +1,6 @@
+interface:
+  display_name: "Conversation Evidence · Show Use Cases"
+  short_description: "Render a small set of distinct concrete use cases for the curren"
+  default_prompt: "Use $conversation-evidence:show-use-cases on the current working object."
+policy:
+  allow_implicit_invocation: false

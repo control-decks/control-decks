@@ -1,0 +1,27 @@
+{
+  "name": "conversation-extension",
+  "version": "0.1.0",
+  "description": "Move a thought one useful step beyond its current edge.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/conversation-extension",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Conversation Extension",
+    "shortDescription": "Move a thought one useful step beyond its current edge.",
+    "longDescription": "Move a thought one useful step beyond its current edge. Human-invoked HACP Draft 0.4 cards from the Conversation Game.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": [
+      "Further"
+    ],
+    "brandColor": "#7357FF",
+    "defaultPrompt": [
+      "$conversation-extension:further Use this card on the current working object."
+    ]
+  }
+}

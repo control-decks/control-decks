@@ -1,0 +1,27 @@
+{
+  "name": "conversation-view",
+  "version": "0.1.0",
+  "description": "Render relationships and sequence without changing substance.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/conversation-view",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Conversation View",
+    "shortDescription": "Render relationships and sequence without changing substance.",
+    "longDescription": "Render relationships and sequence without changing substance. Human-invoked HACP Draft 0.4 cards from the Conversation Game.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": [
+      "Show Mindmap"
+    ],
+    "brandColor": "#7357FF",
+    "defaultPrompt": [
+      "$conversation-view:show-mindmap Use this card on the current working object."
+    ]
+  }
+}

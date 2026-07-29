@@ -1,0 +1,29 @@
+{
+  "name": "session-hygiene",
+  "version": "0.1.0",
+  "description": "Keep long-lived sessions and their Home metadata clean.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/session-hygiene",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Session Hygiene",
+    "shortDescription": "Keep long-lived sessions and their Home metadata clean.",
+    "longDescription": "Keep long-lived sessions and their Home metadata clean. Human-invoked HACP Draft 0.4 cards from the Session Game.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": [
+      "Homekeeper",
+      "Clear Homekeeper"
+    ],
+    "brandColor": "#7357FF",
+    "defaultPrompt": [
+      "$session-hygiene:homekeeper Use this card on the current working object.",
+      "$session-hygiene:clear-homekeeper Use this card on the current working object."
+    ]
+  }
+}

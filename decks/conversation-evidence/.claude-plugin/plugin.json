@@ -1,0 +1,12 @@
+{
+  "name": "conversation-evidence",
+  "version": "0.1.0",
+  "description": "Expose concrete evidence and examples around a thought.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/conversation-evidence",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT"
+}

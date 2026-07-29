@@ -1,0 +1,12 @@
+{
+  "name": "session-intents",
+  "version": "0.1.0",
+  "description": "Give a session one explicit operating intent.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/session-intents",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT"
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Session Orchestration · Generate Images"
+  short_description: "Generate the requested count of images from the bound visual bri"
+  default_prompt: "Use $session-orchestration:generate-images on the current working object."
+policy:
+  allow_implicit_invocation: false

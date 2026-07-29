@@ -1,0 +1,12 @@
+{
+  "game": "session",
+  "version": "0.1.0",
+  "title": "Session",
+  "description": "Shape, open, route, and maintain agent sessions.",
+  "decks": [
+    "session-intents",
+    "session-lifecycle",
+    "session-orchestration",
+    "session-hygiene"
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Conversation Extension · Further"
+  short_description: "Extend the strongest supported edge of the current object by one"
+  default_prompt: "Use $conversation-extension:further on the current working object."
+policy:
+  allow_implicit_invocation: false

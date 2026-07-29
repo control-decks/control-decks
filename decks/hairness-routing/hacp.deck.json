@@ -1,0 +1,109 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "hairness-routing",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "hairness-routing/refresh-context",
+      "command": "refresh-context",
+      "kind": "operation",
+      "mode": "annotate",
+      "traits": [
+        "read-only",
+        "hairness-context",
+        "context-refresh"
+      ],
+      "defaultBinding": "current-hairness-context",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/result",
+      "duration": "once",
+      "relations": {
+        "addsAnnotations": [
+          "hairness-routing/context-refreshed"
+        ],
+        "satisfiesTraits": [
+          "current-context"
+        ]
+      }
+    },
+    {
+      "id": "hairness-routing/route-workspace",
+      "command": "route-workspace",
+      "kind": "binding",
+      "mode": "select",
+      "traits": [
+        "semantic",
+        "hairness-routing"
+      ],
+      "defaultBinding": "known-workspaces",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/binding",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "hairness-routing/route-workstream",
+      "command": "route-workstream",
+      "kind": "binding",
+      "mode": "select",
+      "traits": [
+        "semantic",
+        "hairness-routing"
+      ],
+      "defaultBinding": "known-workstreams",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/binding",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "hairness-routing/route-target",
+      "command": "route-target",
+      "kind": "binding",
+      "mode": "select",
+      "traits": [
+        "semantic",
+        "hairness-routing"
+      ],
+      "defaultBinding": "known-targets",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/binding",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "hairness-routing/show-hud",
+      "command": "show-hud",
+      "kind": "presentation",
+      "mode": "render",
+      "traits": [
+        "read-only",
+        "presentation",
+        "hairness-context"
+      ],
+      "defaultBinding": "current-home",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/presentation",
+      "duration": "once",
+      "relations": {}
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "conversation-view",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "conversation-view/show-mindmap",
+      "command": "show-mindmap",
+      "kind": "presentation",
+      "mode": "render",
+      "traits": [
+        "read-only",
+        "semantic",
+        "presentation"
+      ],
+      "defaultBinding": "current-working-object",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/presentation",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "conversation-view/show-context-map",
+      "command": "show-context-map",
+      "kind": "presentation",
+      "mode": "render",
+      "traits": [
+        "read-only",
+        "semantic",
+        "presentation"
+      ],
+      "defaultBinding": "current-working-object",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/presentation",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "conversation-view/show-diagram",
+      "command": "show-diagram",
+      "kind": "presentation",
+      "mode": "render",
+      "traits": [
+        "read-only",
+        "semantic",
+        "presentation"
+      ],
+      "defaultBinding": "current-working-object",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/presentation",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "conversation-view/show-timeline",
+      "command": "show-timeline",
+      "kind": "presentation",
+      "mode": "render",
+      "traits": [
+        "read-only",
+        "semantic",
+        "presentation"
+      ],
+      "defaultBinding": "current-working-object",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/presentation",
+      "duration": "once",
+      "relations": {}
+    }
+  ]
+}

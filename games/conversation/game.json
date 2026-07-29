@@ -1,0 +1,12 @@
+{
+  "game": "conversation",
+  "version": "0.1.0",
+  "title": "Conversation",
+  "description": "Extend, focus, substantiate, and render a shared thought.",
+  "decks": [
+    "conversation-extension",
+    "conversation-focus",
+    "conversation-evidence",
+    "conversation-view"
+  ]
+}

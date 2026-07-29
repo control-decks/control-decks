@@ -1,0 +1,29 @@
+{
+  "name": "conversation-evidence",
+  "version": "0.1.0",
+  "description": "Expose concrete evidence and examples around a thought.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/conversation-evidence",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Conversation Evidence",
+    "shortDescription": "Expose concrete evidence and examples around a thought.",
+    "longDescription": "Expose concrete evidence and examples around a thought. Human-invoked HACP Draft 0.4 cards from the Conversation Game.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": [
+      "Show Snippets",
+      "Show Use Cases"
+    ],
+    "brandColor": "#7357FF",
+    "defaultPrompt": [
+      "$conversation-evidence:show-snippets Use this card on the current working object.",
+      "$conversation-evidence:show-use-cases Use this card on the current working object."
+    ]
+  }
+}

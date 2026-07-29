@@ -1,0 +1,104 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "session-hygiene",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "session-hygiene/homekeeper",
+      "command": "homekeeper",
+      "kind": "control",
+      "mode": "guard",
+      "traits": [
+        "session-control",
+        "role-policy",
+        "homekeeper"
+      ],
+      "defaultBinding": "current-home",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "session-hygiene/control-state",
+      "duration": "until-clear",
+      "relations": {
+        "permitsTraits": [
+          "home-metadata",
+          "desk-metadata",
+          "task-metadata"
+        ],
+        "blocksTraits": [
+          "target-mutation",
+          "push",
+          "publish",
+          "permanent-delete",
+          "secrets"
+        ]
+      }
+    },
+    {
+      "id": "session-hygiene/clear-homekeeper",
+      "command": "clear-homekeeper",
+      "kind": "control",
+      "mode": "clear",
+      "traits": [
+        "deck-clear",
+        "mutation-safe"
+      ],
+      "defaultBinding": "session-hygiene/control-state",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "session-hygiene/control-state",
+      "duration": "once",
+      "relations": {
+        "clearsTraits": [
+          "homekeeper"
+        ]
+      }
+    },
+    {
+      "id": "session-hygiene/park-session",
+      "command": "park-session",
+      "kind": "operation",
+      "mode": "artifact",
+      "traits": [
+        "artifact",
+        "task-metadata"
+      ],
+      "defaultBinding": "current-task",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "session-hygiene/parking-handoff",
+      "duration": "until-confirmed",
+      "relations": {}
+    },
+    {
+      "id": "session-hygiene/archive-session",
+      "command": "archive-session",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "external-effect",
+        "task-management"
+      ],
+      "defaultBinding": "current-task",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/resumable-object",
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "session-hygiene/archive-result",
+      "duration": "once",
+      "relations": {}
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Session Orchestration · Spawn Agents"
+  short_description: "Spawn the requested count of agents on independent bounded slice"
+  default_prompt: "Use $session-orchestration:spawn-agents on the current working object."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,123 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "session-orchestration",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "session-orchestration/spawn-agents",
+      "command": "spawn-agents",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "delegation",
+        "external-effect"
+      ],
+      "defaultBinding": "current-delegable-work",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/delegable-object",
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "session-orchestration/spawn-result",
+      "duration": "once",
+      "relations": {
+        "blockedByTraits": [
+          "external-access-guard"
+        ]
+      }
+    },
+    {
+      "id": "session-orchestration/generate-images",
+      "command": "generate-images",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "generation",
+        "external-effect",
+        "image"
+      ],
+      "defaultBinding": "current-visual-brief",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/visual-brief",
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "session-orchestration/image-results",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "session-orchestration/delegate-task",
+      "command": "delegate-task",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "delegation",
+        "external-effect"
+      ],
+      "defaultBinding": "current-delegable-task",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/delegable-object",
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "session-orchestration/delegation-result",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "session-orchestration/parallelize",
+      "command": "parallelize",
+      "kind": "operation",
+      "mode": "transform",
+      "traits": [
+        "read-only",
+        "semantic"
+      ],
+      "defaultBinding": "current-work",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/decomposable-object"
+      ],
+      "produces": "session-orchestration/parallel-plan",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "session-orchestration/wait-for-tasks",
+      "command": "wait-for-tasks",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "read-only",
+        "task-coordination"
+      ],
+      "defaultBinding": "current-delegated-tasks",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/addressable-tasks"
+      ],
+      "produces": "session-orchestration/wait-result",
+      "duration": "once",
+      "relations": {}
+    }
+  ]
+}

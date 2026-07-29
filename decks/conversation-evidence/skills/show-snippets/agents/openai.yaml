@@ -1,0 +1,6 @@
+interface:
+  display_name: "Conversation Evidence · Show Snippets"
+  short_description: "Show the smallest concrete source snippets needed to ground the "
+  default_prompt: "Use $conversation-evidence:show-snippets on the current working object."
+policy:
+  allow_implicit_invocation: false

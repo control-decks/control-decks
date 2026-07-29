@@ -1,0 +1,6 @@
+interface:
+  display_name: "Conversation Focus · Zoom In"
+  short_description: "Narrow the current object to its most consequential unresolved d"
+  default_prompt: "Use $conversation-focus:zoom-in on the current working object."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,12 @@
+{
+  "name": "conversation-view",
+  "version": "0.1.0",
+  "description": "Render relationships and sequence without changing substance.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/conversation-view",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT"
+}

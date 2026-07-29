@@ -1,0 +1,6 @@
+interface:
+  display_name: "Conversation Focus · Zoom Out"
+  short_description: "Place the current object in the smallest larger frame that mater"
+  default_prompt: "Use $conversation-focus:zoom-out on the current working object."
+policy:
+  allow_implicit_invocation: false

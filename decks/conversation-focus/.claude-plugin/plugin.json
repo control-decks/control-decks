@@ -1,0 +1,12 @@
+{
+  "name": "conversation-focus",
+  "version": "0.1.0",
+  "description": "Change the semantic scale or axis of the current object.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/conversation-focus",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT"
+}

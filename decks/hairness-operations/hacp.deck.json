@@ -1,0 +1,109 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "hairness-operations",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "hairness-operations/white-card",
+      "command": "white-card",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "multi-exchange",
+        "bounded-autonomy",
+        "white-card"
+      ],
+      "defaultBinding": "current-authorized-objective",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/actionable-direction",
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "hairness-operations/completion-result",
+      "duration": "until-complete",
+      "relations": {
+        "blockedByTraits": [
+          "mutation-guard",
+          "external-access-guard",
+          "evidence-gate"
+        ]
+      }
+    },
+    {
+      "id": "hairness-operations/clear-white-card",
+      "command": "clear-white-card",
+      "kind": "control",
+      "mode": "clear",
+      "traits": [
+        "deck-clear",
+        "mutation-safe"
+      ],
+      "defaultBinding": "hairness-operations/completion-result",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hairness-operations/control-state",
+      "duration": "once",
+      "relations": {
+        "clearsTraits": [
+          "white-card"
+        ]
+      }
+    },
+    {
+      "id": "hairness-operations/sync-home",
+      "command": "sync-home",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "mutation",
+        "home-metadata"
+      ],
+      "defaultBinding": "current-home",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "hairness-operations/sync-result",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "hairness-operations/doctor-home",
+      "command": "doctor-home",
+      "kind": "operation",
+      "mode": "annotate",
+      "traits": [
+        "read-only",
+        "evidence-annotation",
+        "hairness-context"
+      ],
+      "defaultBinding": "current-home",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/result",
+      "duration": "once",
+      "relations": {
+        "addsAnnotations": [
+          "hairness-operations/home-doctor"
+        ],
+        "satisfiesTraits": [
+          "evidence",
+          "home-evidence"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://hairness.dev/schema/asset.json",
+  "name": "control-decks/conversation-focus",
+  "version": "0.1.0",
+  "description": "Change the semantic scale or axis of the current object.",
+  "prefix": "conversation-focus",
+  "files": [
+    "hacp.deck.json",
+    "capabilities/zoom-in.md",
+    "capabilities/zoom-out.md",
+    "capabilities/on-axis.md",
+    "capabilities/refocus.md"
+  ],
+  "capabilities": [
+    {
+      "id": "zoom-in",
+      "path": "capabilities/zoom-in.md",
+      "description": "Narrow the current object to its most consequential unresolved detail."
+    },
+    {
+      "id": "zoom-out",
+      "path": "capabilities/zoom-out.md",
+      "description": "Place the current object in the smallest larger frame that materially changes understanding."
+    },
+    {
+      "id": "on-axis",
+      "path": "capabilities/on-axis.md",
+      "description": "Select one explicit semantic axis for the following compatible cards."
+    },
+    {
+      "id": "refocus",
+      "path": "capabilities/refocus.md",
+      "description": "Return the conversation to the last explicit objective and its nearest open question."
+    }
+  ],
+  "skills": [
+    {
+      "id": "zoom-in",
+      "capability": "zoom-in",
+      "description": "Narrow the current object to its most consequential unresolved detail."
+    },
+    {
+      "id": "zoom-out",
+      "capability": "zoom-out",
+      "description": "Place the current object in the smallest larger frame that materially changes understanding."
+    }
+  ],
+  "commands": [
+    {
+      "id": "zoom-in",
+      "capability": "zoom-in",
+      "description": "Narrow the current object to its most consequential unresolved detail."
+    },
+    {
+      "id": "zoom-out",
+      "capability": "zoom-out",
+      "description": "Place the current object in the smallest larger frame that materially changes understanding."
+    }
+  ]
+}

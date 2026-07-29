@@ -1,0 +1,31 @@
+{
+  "name": "session-lifecycle",
+  "version": "0.1.0",
+  "description": "Open, rename, hand off, refresh, and close tasks.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/session-lifecycle",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Session Lifecycle",
+    "shortDescription": "Open, rename, hand off, refresh, and close tasks.",
+    "longDescription": "Open, rename, hand off, refresh, and close tasks. Human-invoked HACP Draft 0.4 cards from the Session Game.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": [
+      "Open Task",
+      "Handoff",
+      "Rename Session"
+    ],
+    "brandColor": "#7357FF",
+    "defaultPrompt": [
+      "$session-lifecycle:open-task Use this card on the current working object.",
+      "$session-lifecycle:handoff Use this card on the current working object.",
+      "$session-lifecycle:rename-session Use this card on the current working object."
+    ]
+  }
+}

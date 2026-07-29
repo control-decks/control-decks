@@ -1,0 +1,95 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "conversation-extension",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "conversation-extension/further",
+      "command": "further",
+      "kind": "operation",
+      "mode": "transform",
+      "traits": [
+        "read-only",
+        "semantic",
+        "creative-extension"
+      ],
+      "defaultBinding": "current-working-object",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/extendable-thought"
+      ],
+      "produces": "conversation-extension/extended-thought",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "conversation-extension/implications",
+      "command": "implications",
+      "kind": "operation",
+      "mode": "transform",
+      "traits": [
+        "read-only",
+        "semantic"
+      ],
+      "defaultBinding": "current-working-object",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/extendable-thought"
+      ],
+      "produces": "conversation-extension/implications",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "conversation-extension/alternatives",
+      "command": "alternatives",
+      "kind": "operation",
+      "mode": "transform",
+      "traits": [
+        "read-only",
+        "semantic"
+      ],
+      "defaultBinding": "current-direction",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/open-decision"
+      ],
+      "produces": "conversation-extension/alternatives",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "conversation-extension/counterpoint",
+      "command": "counterpoint",
+      "kind": "operation",
+      "mode": "transform",
+      "traits": [
+        "read-only",
+        "semantic"
+      ],
+      "defaultBinding": "current-claim",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/testable-object"
+      ],
+      "produces": "conversation-extension/counterpoint",
+      "duration": "once",
+      "relations": {}
+    }
+  ]
+}

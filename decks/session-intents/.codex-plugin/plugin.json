@@ -1,0 +1,31 @@
+{
+  "name": "session-intents",
+  "version": "0.1.0",
+  "description": "Give a session one explicit operating intent.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/session-intents",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Session Intents",
+    "shortDescription": "Give a session one explicit operating intent.",
+    "longDescription": "Give a session one explicit operating intent. Human-invoked HACP Draft 0.4 cards from the Session Game.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": [
+      "Main Session",
+      "Clear Main Session",
+      "Search Session"
+    ],
+    "brandColor": "#7357FF",
+    "defaultPrompt": [
+      "$session-intents:main-session Use this card on the current working object.",
+      "$session-intents:clear-main-session Use this card on the current working object.",
+      "$session-intents:search-session Use this card on the current working object."
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "session-lifecycle",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "session-lifecycle/open-task",
+      "command": "open-task",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "external-effect",
+        "task-management"
+      ],
+      "defaultBinding": "current-actionable-object",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/actionable-direction",
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "session-lifecycle/open-task-result",
+      "duration": "once",
+      "relations": {
+        "blockedByTraits": [
+          "external-access-guard"
+        ]
+      }
+    },
+    {
+      "id": "session-lifecycle/handoff",
+      "command": "handoff",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "external-effect",
+        "task-management",
+        "context-transfer"
+      ],
+      "defaultBinding": "current-task",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/resumable-object",
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "session-lifecycle/handoff-result",
+      "duration": "once",
+      "relations": {
+        "blockedByTraits": [
+          "external-access-guard"
+        ]
+      }
+    },
+    {
+      "id": "session-lifecycle/rename-session",
+      "command": "rename-session",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "external-effect",
+        "task-management",
+        "metadata-mutation"
+      ],
+      "defaultBinding": "current-task",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "session-lifecycle/rename-result",
+      "duration": "once",
+      "relations": {
+        "blockedByTraits": [
+          "mutation-guard",
+          "external-access-guard"
+        ]
+      }
+    },
+    {
+      "id": "session-lifecycle/update-session",
+      "command": "update-session",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "metadata-mutation",
+        "task-management"
+      ],
+      "defaultBinding": "current-task",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "session-lifecycle/update-result",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "session-lifecycle/close-session",
+      "command": "close-session",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "external-effect",
+        "task-management"
+      ],
+      "defaultBinding": "current-task",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/resumable-object"
+      ],
+      "produces": "session-lifecycle/close-result",
+      "duration": "once",
+      "relations": {}
+    }
+  ]
+}

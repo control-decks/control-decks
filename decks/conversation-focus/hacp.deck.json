@@ -1,0 +1,83 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "conversation-focus",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "conversation-focus/zoom-in",
+      "command": "zoom-in",
+      "kind": "operation",
+      "mode": "transform",
+      "traits": [
+        "read-only",
+        "semantic",
+        "focus"
+      ],
+      "defaultBinding": "current-working-object",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "conversation-focus/narrowed-object",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "conversation-focus/zoom-out",
+      "command": "zoom-out",
+      "kind": "operation",
+      "mode": "transform",
+      "traits": [
+        "read-only",
+        "semantic",
+        "focus"
+      ],
+      "defaultBinding": "current-working-object",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "conversation-focus/wider-frame",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "conversation-focus/on-axis",
+      "command": "on-axis",
+      "kind": "binding",
+      "mode": "select",
+      "traits": [
+        "semantic"
+      ],
+      "defaultBinding": "current-axis",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/binding",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "conversation-focus/refocus",
+      "command": "refocus",
+      "kind": "operation",
+      "mode": "transform",
+      "traits": [
+        "read-only",
+        "semantic"
+      ],
+      "defaultBinding": "available-conversation",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "conversation-focus/refocused-object",
+      "duration": "once",
+      "relations": {}
+    }
+  ]
+}

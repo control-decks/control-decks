@@ -1,0 +1,29 @@
+{
+  "name": "hairness-operations",
+  "version": "0.1.0",
+  "description": "Delegate bounded contextual decisions and Home maintenance.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/hairness-operations",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Hairness Operations",
+    "shortDescription": "Delegate bounded contextual decisions and Home maintenance.",
+    "longDescription": "Delegate bounded contextual decisions and Home maintenance. Human-invoked HACP Draft 0.4 cards from the Hairness Home Game.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": [
+      "White Card",
+      "Clear White Card"
+    ],
+    "brandColor": "#7357FF",
+    "defaultPrompt": [
+      "$hairness-operations:white-card Use this card on the current working object.",
+      "$hairness-operations:clear-white-card Use this card on the current working object."
+    ]
+  }
+}
