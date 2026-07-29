@@ -33,18 +33,7 @@
       "description": "Render the smallest concrete counterexamples that test the current claim's boundary."
     }
   ],
-  "skills": [
-    {
-      "id": "show-snippets",
-      "capability": "show-snippets",
-      "description": "Show the smallest concrete source snippets needed to ground the current claim or proposal."
-    },
-    {
-      "id": "show-use-cases",
-      "capability": "show-use-cases",
-      "description": "Render a small set of distinct concrete use cases for the current object."
-    }
-  ],
+  "skills": [],
   "commands": [
     {
       "id": "show-snippets",

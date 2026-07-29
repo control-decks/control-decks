@@ -39,23 +39,7 @@
       "description": "Close or archive the current task after preserving the smallest resumable state."
     }
   ],
-  "skills": [
-    {
-      "id": "open-task",
-      "capability": "open-task",
-      "description": "Create one new task with a self-contained entry prompt derived from the bound object."
-    },
-    {
-      "id": "handoff",
-      "capability": "handoff",
-      "description": "Prepare or perform one resumable task handoff while preserving the bound context and current authority."
-    },
-    {
-      "id": "rename-session",
-      "capability": "rename-session",
-      "description": "Rename the current task from its resolved owner, axis, objective, and emoji."
-    }
-  ],
+  "skills": [],
   "commands": [
     {
       "id": "open-task",

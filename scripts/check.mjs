@@ -105,6 +105,9 @@ for (const gameId of gameIds) {
       fail(`Asset and HACP manifest diverge: ${deckId}`);
     }
     const accessors = [...asset.skills, ...asset.commands];
+    if (asset.skills.length) {
+      fail(`HACP Cards must remain user-only Hairness Commands: ${deckId}`);
+    }
     if (accessors.some(({ capability }) => !assetCards.has(capability))) {
       fail(`Asset accessor references an unknown Capability: ${deckId}`);
     }

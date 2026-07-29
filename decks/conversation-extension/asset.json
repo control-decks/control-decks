@@ -33,13 +33,7 @@
       "description": "Develop the strongest grounded counterpoint to the current claim."
     }
   ],
-  "skills": [
-    {
-      "id": "further",
-      "capability": "further",
-      "description": "Extend the strongest supported edge of the current object by one non-obvious implication."
-    }
-  ],
+  "skills": [],
   "commands": [
     {
       "id": "further",

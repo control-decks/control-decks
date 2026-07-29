@@ -74,7 +74,9 @@ decks/<deck>/.claude-plugin/plugin.json
 ```
 
 `hacp.deck.json`, `asset.json`, and Capability Markdown are the source
-contracts. Provider skills expose only Wave 1.
+contracts. Plugin skills expose only Wave 1 and disable implicit invocation.
+Hairness Assets expose Cards as Commands only, keeping the catalogue out of the
+agent HUD until a human plays a Card.
 
 ## Develop
 

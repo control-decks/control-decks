@@ -33,18 +33,7 @@
       "description": "Inspect the current Home and return blocking, warning, and advisory findings."
     }
   ],
-  "skills": [
-    {
-      "id": "white-card",
-      "capability": "white-card",
-      "description": "Take every remaining decision needed to complete the bound objective using the most coherent choice available in current context."
-    },
-    {
-      "id": "clear-white-card",
-      "capability": "clear-white-card",
-      "description": "Stop the active White Card operation without changing completed results."
-    }
-  ],
+  "skills": [],
   "commands": [
     {
       "id": "white-card",

@@ -39,23 +39,7 @@
       "description": "Orient the current session around a bounded review target and evidence standard."
     }
   ],
-  "skills": [
-    {
-      "id": "main-session",
-      "capability": "main-session",
-      "description": "Keep the current agent as a coordinator and delegate every bounded long task to subagents."
-    },
-    {
-      "id": "clear-main-session",
-      "capability": "clear-main-session",
-      "description": "Clear the active Main Session coordination policy."
-    },
-    {
-      "id": "search-session",
-      "capability": "search-session",
-      "description": "Orient the current session toward evidence-gathering and return a bounded search brief."
-    }
-  ],
+  "skills": [],
   "commands": [
     {
       "id": "main-session",

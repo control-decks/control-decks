@@ -39,18 +39,7 @@
       "description": "Wait for the bound tasks and return only changed, completed, or attention-needed state."
     }
   ],
-  "skills": [
-    {
-      "id": "spawn-agents",
-      "capability": "spawn-agents",
-      "description": "Spawn the requested count of agents on independent bounded slices of the current work."
-    },
-    {
-      "id": "generate-images",
-      "capability": "generate-images",
-      "description": "Generate the requested count of images from the bound visual brief."
-    }
-  ],
+  "skills": [],
   "commands": [
     {
       "id": "spawn-agents",

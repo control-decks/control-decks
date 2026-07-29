@@ -33,18 +33,7 @@
       "description": "Archive the current task after its resumable state is preserved."
     }
   ],
-  "skills": [
-    {
-      "id": "homekeeper",
-      "capability": "homekeeper",
-      "description": "Maintain local Home, Desk, and task metadata while other sessions stay focused on their own work."
-    },
-    {
-      "id": "clear-homekeeper",
-      "capability": "clear-homekeeper",
-      "description": "Clear the active Homekeeper role policy."
-    }
-  ],
+  "skills": [],
   "commands": [
     {
       "id": "homekeeper",

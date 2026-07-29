@@ -33,19 +33,7 @@
       "description": "Select one resolved Hairness Workstream and load its current resumable context."
     }
   ],
-  "skills": [
-    {
-      "id": "hairness-context-pick-target",
-      "capability": "hairness-context-pick-target",
-      "description": "Select one known Hairness Target and load only its current inspectable context.",
-      "forEach": "target"
-    },
-    {
-      "id": "hairness-context-any-target",
-      "capability": "hairness-context-any-target",
-      "description": "Enumerate known Hairness Targets and select the unique semantic match for the current subject."
-    }
-  ],
+  "skills": [],
   "commands": [
     {
       "id": "hairness-context-pick-target",

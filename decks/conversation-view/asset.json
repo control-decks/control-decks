@@ -33,13 +33,7 @@
       "description": "Render the current object's meaningful sequence, transitions, and current state."
     }
   ],
-  "skills": [
-    {
-      "id": "show-mindmap",
-      "capability": "show-mindmap",
-      "description": "Render the current object as a compact hierarchical mind map."
-    }
-  ],
+  "skills": [],
   "commands": [
     {
       "id": "show-mindmap",

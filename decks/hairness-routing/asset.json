@@ -39,13 +39,7 @@
       "description": "Render the smallest useful live Hairness HUD for the current context."
     }
   ],
-  "skills": [
-    {
-      "id": "refresh-context",
-      "capability": "refresh-context",
-      "description": "Re-read the authoritative current context for the bound Home identity and report material changes."
-    }
-  ],
+  "skills": [],
   "commands": [
     {
       "id": "refresh-context",

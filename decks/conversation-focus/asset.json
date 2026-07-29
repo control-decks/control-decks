@@ -33,18 +33,7 @@
       "description": "Return the conversation to the last explicit objective and its nearest open question."
     }
   ],
-  "skills": [
-    {
-      "id": "zoom-in",
-      "capability": "zoom-in",
-      "description": "Narrow the current object to its most consequential unresolved detail."
-    },
-    {
-      "id": "zoom-out",
-      "capability": "zoom-out",
-      "description": "Place the current object in the smallest larger frame that materially changes understanding."
-    }
-  ],
+  "skills": [],
   "commands": [
     {
       "id": "zoom-in",
