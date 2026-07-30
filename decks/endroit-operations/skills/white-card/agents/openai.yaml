@@ -1,0 +1,6 @@
+interface:
+  display_name: "Endroit Operations · White Card"
+  short_description: "Take every remaining decision needed to complete the bound objec"
+  default_prompt: "Use $endroit-operations:white-card on the current working object."
+policy:
+  allow_implicit_invocation: false

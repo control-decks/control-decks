@@ -1,0 +1,12 @@
+{
+  "name": "endroit-routing",
+  "version": "0.1.0",
+  "description": "Refresh and route work through resolved Home identities.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/endroit-routing",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT"
+}

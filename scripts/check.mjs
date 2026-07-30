@@ -26,8 +26,8 @@ const expectedWave = new Set([
   "show-snippets",
   "show-use-cases",
   "show-mindmap",
-  "hairness-context-pick-target",
-  "hairness-context-any-target",
+  "endroit-context-pick-target",
+  "endroit-context-any-target",
   "refresh-context",
   "white-card",
   "clear-white-card",
@@ -37,7 +37,7 @@ const gameIds = (await readdir(join(root, "games"), { withFileTypes: true }))
   .filter((entry) => entry.isDirectory())
   .map(({ name }) => name)
   .sort();
-if (gameIds.join(",") !== "conversation,hairness-home,session") {
+if (gameIds.join(",") !== "conversation,endroit-home,session") {
   fail(`expected 3 Games, found ${gameIds.join(", ")}`);
 }
 
@@ -106,7 +106,7 @@ for (const gameId of gameIds) {
     }
     const accessors = [...asset.skills, ...asset.commands];
     if (asset.skills.length) {
-      fail(`HACP Cards must remain user-only Hairness Commands: ${deckId}`);
+      fail(`HACP Cards must remain user-only Endroit Commands: ${deckId}`);
     }
     if (accessors.some(({ capability }) => !assetCards.has(capability))) {
       fail(`Asset accessor references an unknown Capability: ${deckId}`);

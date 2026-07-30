@@ -1,0 +1,49 @@
+{
+  "$schema": "https://endroit.org/schema/asset.json",
+  "name": "control-decks/endroit-operations",
+  "version": "0.1.0",
+  "description": "Delegate bounded contextual decisions and Home maintenance.",
+  "prefix": "endroit-operations",
+  "files": [
+    "hacp.deck.json",
+    "capabilities/white-card.md",
+    "capabilities/clear-white-card.md",
+    "capabilities/sync-home.md",
+    "capabilities/doctor-home.md"
+  ],
+  "capabilities": [
+    {
+      "id": "white-card",
+      "path": "capabilities/white-card.md",
+      "description": "Take every remaining decision needed to complete the bound objective using the most coherent choice available in current context."
+    },
+    {
+      "id": "clear-white-card",
+      "path": "capabilities/clear-white-card.md",
+      "description": "Stop the active White Card operation without changing completed results."
+    },
+    {
+      "id": "sync-home",
+      "path": "capabilities/sync-home.md",
+      "description": "Rebuild provider projections from canonical Home and Desk sources."
+    },
+    {
+      "id": "doctor-home",
+      "path": "capabilities/doctor-home.md",
+      "description": "Inspect the current Home and return blocking, warning, and advisory findings."
+    }
+  ],
+  "skills": [],
+  "commands": [
+    {
+      "id": "white-card",
+      "capability": "white-card",
+      "description": "Take every remaining decision needed to complete the bound objective using the most coherent choice available in current context."
+    },
+    {
+      "id": "clear-white-card",
+      "capability": "clear-white-card",
+      "description": "Stop the active White Card operation without changing completed results."
+    }
+  ]
+}

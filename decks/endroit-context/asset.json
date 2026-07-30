@@ -1,0 +1,50 @@
+{
+  "$schema": "https://endroit.org/schema/asset.json",
+  "name": "control-decks/endroit-context",
+  "version": "0.1.0",
+  "description": "Bind conversation to resolved Home, Workspace, Workstream, or Target context.",
+  "prefix": "endroit-context",
+  "files": [
+    "hacp.deck.json",
+    "capabilities/endroit-context-pick-target.md",
+    "capabilities/endroit-context-any-target.md",
+    "capabilities/endroit-context-pick-workspace.md",
+    "capabilities/endroit-context-pick-workstream.md"
+  ],
+  "capabilities": [
+    {
+      "id": "endroit-context-pick-target",
+      "path": "capabilities/endroit-context-pick-target.md",
+      "description": "Select one known Endroit Target and load only its current inspectable context."
+    },
+    {
+      "id": "endroit-context-any-target",
+      "path": "capabilities/endroit-context-any-target.md",
+      "description": "Enumerate known Endroit Targets and select the unique semantic match for the current subject."
+    },
+    {
+      "id": "endroit-context-pick-workspace",
+      "path": "capabilities/endroit-context-pick-workspace.md",
+      "description": "Select one resolved Endroit Workspace and load its bounded durable context."
+    },
+    {
+      "id": "endroit-context-pick-workstream",
+      "path": "capabilities/endroit-context-pick-workstream.md",
+      "description": "Select one resolved Endroit Workstream and load its current resumable context."
+    }
+  ],
+  "skills": [],
+  "commands": [
+    {
+      "id": "endroit-context-pick-target",
+      "capability": "endroit-context-pick-target",
+      "description": "Select one known Endroit Target and load only its current inspectable context.",
+      "forEach": "target"
+    },
+    {
+      "id": "endroit-context-any-target",
+      "capability": "endroit-context-any-target",
+      "description": "Enumerate known Endroit Targets and select the unique semantic match for the current subject."
+    }
+  ]
+}

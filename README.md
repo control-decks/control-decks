@@ -20,7 +20,7 @@ distribution conventions; `game.json` is deliberately repo-local.
 | --- | --- | ---: | ---: |
 | Session | Shape, open, route, and maintain agent sessions. | 4 | 19 |
 | Conversation | Extend, focus, substantiate, and render thought. | 4 | 16 |
-| Hairness Home | Select resolved Home context and operate within it. | 3 | 13 |
+| Endroit Home | Select resolved Home context and operate within it. | 3 | 13 |
 | **Total** |  | **11** | **48** |
 
 Every Card has a provider-neutral Capability contract. Wave 1 projects 18
@@ -33,12 +33,12 @@ skills. A Deck is the plugin and installation unit; there is no root resolver.
   `rename-session`, `spawn-agents`, `generate-images`, `homekeeper`
 - Conversation: `further`, `zoom-in`, `zoom-out`, `show-snippets`,
   `show-use-cases`, `show-mindmap`
-- Hairness Home: `hairness-context-pick-target`,
-  `hairness-context-any-target`, `refresh-context`, `white-card`
+- Endroit Home: `endroit-context-pick-target`,
+  `endroit-context-any-target`, `refresh-context`, `white-card`
 - Clear: `clear-main-session`, `clear-homekeeper`, `clear-white-card`
 
 Cards never pretend a host feature exists. A provider-specific Card returns a
-stable `blocked` result when its required task, delegation, image, or Hairness
+stable `blocked` result when its required task, delegation, image, or Endroit
 surface is unavailable.
 
 ## Install
@@ -75,7 +75,7 @@ decks/<deck>/.claude-plugin/plugin.json
 
 `hacp.deck.json`, `asset.json`, and Capability Markdown are the source
 contracts. Plugin skills expose only Wave 1 and disable implicit invocation.
-Hairness Assets expose Cards as Commands only, keeping the catalogue out of the
+Endroit Assets expose Cards as Commands only, keeping the catalogue out of the
 agent HUD until a human plays a Card.
 
 ## Develop

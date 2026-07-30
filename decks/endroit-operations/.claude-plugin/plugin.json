@@ -1,0 +1,12 @@
+{
+  "name": "endroit-operations",
+  "version": "0.1.0",
+  "description": "Delegate bounded contextual decisions and Home maintenance.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/endroit-operations",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT"
+}

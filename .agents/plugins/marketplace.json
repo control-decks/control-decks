@@ -106,10 +106,10 @@
       }
     },
     {
-      "name": "hairness-context",
+      "name": "endroit-context",
       "source": {
         "source": "local",
-        "path": "./decks/hairness-context"
+        "path": "./decks/endroit-context"
       },
       "description": "Bind conversation to resolved Home, Workspace, Workstream, or Target context.",
       "category": "Productivity",
@@ -119,10 +119,10 @@
       }
     },
     {
-      "name": "hairness-routing",
+      "name": "endroit-routing",
       "source": {
         "source": "local",
-        "path": "./decks/hairness-routing"
+        "path": "./decks/endroit-routing"
       },
       "description": "Refresh and route work through resolved Home identities.",
       "category": "Productivity",
@@ -132,10 +132,10 @@
       }
     },
     {
-      "name": "hairness-operations",
+      "name": "endroit-operations",
       "source": {
         "source": "local",
-        "path": "./decks/hairness-operations"
+        "path": "./decks/endroit-operations"
       },
       "description": "Delegate bounded contextual decisions and Home maintenance.",
       "category": "Productivity",
