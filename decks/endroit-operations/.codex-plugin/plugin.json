@@ -1,0 +1,29 @@
+{
+  "name": "endroit-operations",
+  "version": "0.1.0",
+  "description": "Delegate bounded contextual decisions and Home maintenance.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/control-decks/tree/main/decks/endroit-operations",
+  "repository": "https://github.com/control-decks/control-decks",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Endroit Operations",
+    "shortDescription": "Delegate bounded contextual decisions and Home maintenance.",
+    "longDescription": "Delegate bounded contextual decisions and Home maintenance. Human-invoked HACP Draft 0.4 cards from the Endroit Home Game.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": [
+      "White Card",
+      "Clear White Card"
+    ],
+    "brandColor": "#7357FF",
+    "defaultPrompt": [
+      "$endroit-operations:white-card Use this card on the current working object.",
+      "$endroit-operations:clear-white-card Use this card on the current working object."
+    ]
+  }
+}

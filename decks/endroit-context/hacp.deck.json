@@ -1,0 +1,86 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "endroit-context",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "endroit-context/endroit-context-pick-target",
+      "command": "endroit-context-pick-target",
+      "kind": "binding",
+      "mode": "select",
+      "traits": [
+        "semantic",
+        "endroit-context",
+        "target-context"
+      ],
+      "defaultBinding": "current-target",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/binding",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "endroit-context/endroit-context-any-target",
+      "command": "endroit-context-any-target",
+      "kind": "binding",
+      "mode": "select",
+      "traits": [
+        "semantic",
+        "endroit-context",
+        "target-context"
+      ],
+      "defaultBinding": "known-targets",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/binding",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "endroit-context/endroit-context-pick-workspace",
+      "command": "endroit-context-pick-workspace",
+      "kind": "binding",
+      "mode": "select",
+      "traits": [
+        "semantic",
+        "endroit-context",
+        "workspace-context"
+      ],
+      "defaultBinding": "current-workspace",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/binding",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "endroit-context/endroit-context-pick-workstream",
+      "command": "endroit-context-pick-workstream",
+      "kind": "binding",
+      "mode": "select",
+      "traits": [
+        "semantic",
+        "endroit-context",
+        "workstream-context"
+      ],
+      "defaultBinding": "current-workstream",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/binding",
+      "duration": "once",
+      "relations": {}
+    }
+  ]
+}

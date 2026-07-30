@@ -1,6 +1,0 @@
-interface:
-  display_name: "Hairness Operations · Clear White Card"
-  short_description: "Stop the active White Card operation without changing completed "
-  default_prompt: "Use $hairness-operations:clear-white-card on the current working object."
-policy:
-  allow_implicit_invocation: false

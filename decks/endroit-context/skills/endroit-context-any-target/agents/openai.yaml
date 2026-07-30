@@ -1,0 +1,6 @@
+interface:
+  display_name: "Endroit Context · Any Target Context"
+  short_description: "Enumerate known Endroit Targets and select the unique semantic "
+  default_prompt: "Use $endroit-context:endroit-context-any-target on the current working object."
+policy:
+  allow_implicit_invocation: false

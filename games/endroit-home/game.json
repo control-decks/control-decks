@@ -1,0 +1,11 @@
+{
+  "game": "endroit-home",
+  "version": "0.1.0",
+  "title": "Endroit Home",
+  "description": "Select resolved Home context and operate within explicit boundaries.",
+  "decks": [
+    "endroit-context",
+    "endroit-routing",
+    "endroit-operations"
+  ]
+}

@@ -9,7 +9,7 @@ duration: until-clear
 accepts: ["hacp/content", "hacp/result"]
 produces: session-hygiene/control-state
 wave: 1
-provider: hairness-home
+provider: endroit-home
 ---
 
 # Homekeeper

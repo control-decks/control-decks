@@ -1,0 +1,109 @@
+{
+  "hacp": "0.4",
+  "deck": {
+    "id": "endroit-routing",
+    "version": "0.1.0",
+    "publisher": "Control Decks"
+  },
+  "cards": [
+    {
+      "id": "endroit-routing/refresh-context",
+      "command": "refresh-context",
+      "kind": "operation",
+      "mode": "annotate",
+      "traits": [
+        "read-only",
+        "endroit-context",
+        "context-refresh"
+      ],
+      "defaultBinding": "current-endroit-context",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/result",
+      "duration": "once",
+      "relations": {
+        "addsAnnotations": [
+          "endroit-routing/context-refreshed"
+        ],
+        "satisfiesTraits": [
+          "current-context"
+        ]
+      }
+    },
+    {
+      "id": "endroit-routing/route-workspace",
+      "command": "route-workspace",
+      "kind": "binding",
+      "mode": "select",
+      "traits": [
+        "semantic",
+        "endroit-routing"
+      ],
+      "defaultBinding": "known-workspaces",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/binding",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "endroit-routing/route-workstream",
+      "command": "route-workstream",
+      "kind": "binding",
+      "mode": "select",
+      "traits": [
+        "semantic",
+        "endroit-routing"
+      ],
+      "defaultBinding": "known-workstreams",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/binding",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "endroit-routing/route-target",
+      "command": "route-target",
+      "kind": "binding",
+      "mode": "select",
+      "traits": [
+        "semantic",
+        "endroit-routing"
+      ],
+      "defaultBinding": "known-targets",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/binding",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "endroit-routing/show-hud",
+      "command": "show-hud",
+      "kind": "presentation",
+      "mode": "render",
+      "traits": [
+        "read-only",
+        "presentation",
+        "endroit-context"
+      ],
+      "defaultBinding": "current-home",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "produces": "hacp/presentation",
+      "duration": "once",
+      "relations": {}
+    }
+  ]
+}

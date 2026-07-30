@@ -1,6 +1,0 @@
-interface:
-  display_name: "Hairness Context · Pick Target Context"
-  short_description: "Select one known Hairness Target and load only its current inspe"
-  default_prompt: "Use $hairness-context:hairness-context-pick-target on the current working object."
-policy:
-  allow_implicit_invocation: false

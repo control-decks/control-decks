@@ -1,0 +1,6 @@
+interface:
+  display_name: "Endroit Operations · Clear White Card"
+  short_description: "Stop the active White Card operation without changing completed "
+  default_prompt: "Use $endroit-operations:clear-white-card on the current working object."
+policy:
+  allow_implicit_invocation: false

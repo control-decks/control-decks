@@ -1,5 +1,5 @@
 {
-  "$schema": "https://hairness.dev/schema/asset.json",
+  "$schema": "https://endroit.org/schema/asset.json",
   "name": "control-decks/session-intents",
   "version": "0.1.0",
   "description": "Give a session one explicit operating intent.",

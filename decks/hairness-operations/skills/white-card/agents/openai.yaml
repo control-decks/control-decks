@@ -1,6 +1,0 @@
-interface:
-  display_name: "Hairness Operations · White Card"
-  short_description: "Take every remaining decision needed to complete the bound objec"
-  default_prompt: "Use $hairness-operations:white-card on the current working object."
-policy:
-  allow_implicit_invocation: false

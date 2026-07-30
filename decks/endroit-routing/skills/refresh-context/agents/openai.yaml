@@ -1,0 +1,6 @@
+interface:
+  display_name: "Endroit Routing · Refresh Context"
+  short_description: "Re-read the authoritative current context for the bound Home ide"
+  default_prompt: "Use $endroit-routing:refresh-context on the current working object."
+policy:
+  allow_implicit_invocation: false

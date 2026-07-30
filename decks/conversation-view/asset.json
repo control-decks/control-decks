@@ -1,5 +1,5 @@
 {
-  "$schema": "https://hairness.dev/schema/asset.json",
+  "$schema": "https://endroit.org/schema/asset.json",
   "name": "control-decks/conversation-view",
   "version": "0.1.0",
   "description": "Render relationships and sequence without changing substance.",
