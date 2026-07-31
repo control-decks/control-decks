@@ -26,8 +26,8 @@ const expectedWave = new Set([
   "show-snippets",
   "show-use-cases",
   "show-mindmap",
-  "endroit-context-pick-target",
-  "endroit-context-any-target",
+  "endroit-context-pick-site",
+  "endroit-context-any-site",
   "refresh-context",
   "white-card",
   "clear-white-card",
@@ -55,7 +55,7 @@ for (const gameId of gameIds) {
     seenDecks.add(deckId);
 
     const manifest = await readJson(`decks/${deckId}/hacp.deck.json`);
-    const asset = await readJson(`decks/${deckId}/asset.json`);
+    const equipment = await readJson(`decks/${deckId}/equipment.json`);
     const plugin = await readJson(`decks/${deckId}/.codex-plugin/plugin.json`);
     const claude = await readJson(`decks/${deckId}/.claude-plugin/plugin.json`);
 
@@ -65,8 +65,12 @@ for (const gameId of gameIds) {
     if (plugin.name !== deckId || claude.name !== deckId || plugin.version !== "0.1.0") {
       fail(`invalid plugin identity: ${deckId}`);
     }
-    if (asset.name !== `control-decks/${deckId}` || asset.version !== "0.1.0") {
-      fail(`invalid Asset identity: ${deckId}`);
+    if (
+      equipment.$schema !== "https://endroit.org/schema/equipment.json"
+      || equipment.name !== `control-decks/${deckId}`
+      || equipment.version !== "0.1.0"
+    ) {
+      fail(`invalid Equipment identity: ${deckId}`);
     }
 
     const commands = new Set();
@@ -100,19 +104,19 @@ for (const gameId of gameIds) {
       }
     }
 
-    const assetCards = new Set(asset.capabilities.map(({ id }) => id));
-    if (assetCards.size !== manifest.cards.length || [...commands].some((id) => !assetCards.has(id))) {
-      fail(`Asset and HACP manifest diverge: ${deckId}`);
+    const equipmentCards = new Set(equipment.capabilities.map(({ id }) => id));
+    if (equipmentCards.size !== manifest.cards.length || [...commands].some((id) => !equipmentCards.has(id))) {
+      fail(`Equipment and HACP manifest diverge: ${deckId}`);
     }
-    const accessors = [...asset.skills, ...asset.commands];
-    if (asset.skills.length) {
+    const accessors = [...equipment.skills, ...equipment.commands];
+    if (equipment.skills.length) {
       fail(`HACP Cards must remain user-only Endroit Commands: ${deckId}`);
     }
-    if (accessors.some(({ capability }) => !assetCards.has(capability))) {
-      fail(`Asset accessor references an unknown Capability: ${deckId}`);
+    if (accessors.some(({ capability }) => !equipmentCards.has(capability))) {
+      fail(`Equipment accessor references an unknown Capability: ${deckId}`);
     }
-    if (accessors.some(({ forEach }) => forEach && !["workspace", "workstream", "target"].includes(forEach))) {
-      fail(`Asset accessor has an invalid forEach value: ${deckId}`);
+    if (accessors.some(({ forEach }) => forEach && !["room", "meeting", "site"].includes(forEach))) {
+      fail(`Equipment accessor has an invalid forEach value: ${deckId}`);
     }
   }
 }

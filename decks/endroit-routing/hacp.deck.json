@@ -33,15 +33,15 @@
       }
     },
     {
-      "id": "endroit-routing/route-workspace",
-      "command": "route-workspace",
+      "id": "endroit-routing/route-room",
+      "command": "route-room",
       "kind": "binding",
       "mode": "select",
       "traits": [
         "semantic",
         "endroit-routing"
       ],
-      "defaultBinding": "known-workspaces",
+      "defaultBinding": "known-rooms",
       "accepts": [
         "hacp/content",
         "hacp/result"
@@ -51,15 +51,15 @@
       "relations": {}
     },
     {
-      "id": "endroit-routing/route-workstream",
-      "command": "route-workstream",
+      "id": "endroit-routing/route-meeting",
+      "command": "route-meeting",
       "kind": "binding",
       "mode": "select",
       "traits": [
         "semantic",
         "endroit-routing"
       ],
-      "defaultBinding": "known-workstreams",
+      "defaultBinding": "known-meetings",
       "accepts": [
         "hacp/content",
         "hacp/result"
@@ -69,15 +69,15 @@
       "relations": {}
     },
     {
-      "id": "endroit-routing/route-target",
-      "command": "route-target",
+      "id": "endroit-routing/route-site",
+      "command": "route-site",
       "kind": "binding",
       "mode": "select",
       "traits": [
         "semantic",
         "endroit-routing"
       ],
-      "defaultBinding": "known-targets",
+      "defaultBinding": "known-sites",
       "accepts": [
         "hacp/content",
         "hacp/result"

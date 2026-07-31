@@ -26,7 +26,7 @@ provider: endroit-home
 
 **Effect:** Maintain local Home, Desk, and task metadata while other sessions stay focused on their own work.
 
-**Limits:** May edit and commit Home, Desk, and task metadata only. Never mutate Targets, push, publish, permanently delete, or handle secrets.
+**Limits:** May edit and commit Home, Desk, and task metadata only. Never mutate Sites, push, publish, permanently delete, or handle secrets.
 
 ## Resolve
 

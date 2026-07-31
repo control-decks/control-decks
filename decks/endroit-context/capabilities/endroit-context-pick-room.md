@@ -1,32 +1,32 @@
 ---
-id: endroit-context-pick-target
-title: "Pick Target Context"
-summary: "Select one known Endroit Target and load only its current inspectable context."
+id: endroit-context-pick-room
+title: "Pick Room Context"
+summary: "Select one resolved Endroit Room and load its bounded durable context."
 deck: endroit-context
 game: endroit-home
 role: binding/select
 duration: once
 accepts: ["hacp/content", "hacp/result"]
 produces: hacp/binding
-wave: 1
+wave: 0
 provider: endroit-home
 ---
 
-# Pick Target Context
+# Pick Room Context
 
-**ID:** `endroit-context/endroit-context-pick-target`\
+**ID:** `endroit-context/endroit-context-pick-room`\
 **HACP:** `0.4`\
 **Kind:** `binding`\
 **Mode:** `select`\
-**Traits:** `semantic`, `endroit-context`, `target-context`\
-**Default Binding:** current-target\
+**Traits:** `semantic`, `endroit-context`, `room-context`\
+**Default Binding:** current-room\
 **Accepts:** `hacp/content`, `hacp/result`\
 **Produces:** `hacp/binding`\
 **Duration:** `once`
 
-**Effect:** Select one known Endroit Target and load only its current inspectable context.
+**Effect:** Select one resolved Endroit Room and load its bounded durable context.
 
-**Limits:** Require an explicit or uniquely resolvable Target; never guess a repository or mutate it.
+**Limits:** Require an explicit or uniquely resolvable Room and read only linked material.
 
 ## Resolve
 
@@ -39,5 +39,5 @@ provider: endroit-home
 ## Visibility
 
 Begin the combo trace with
-`> 🎯 **<binding>** → 🃏 **ENDROIT-CONTEXT-PICK-TARGET**` when used alone. Append
-`→ 🃏 **ENDROIT-CONTEXT-PICK-TARGET**` when another Card precedes it.
+`> 🎯 **<binding>** → 🃏 **ENDROIT-CONTEXT-PICK-ROOM**` when used alone. Append
+`→ 🃏 **ENDROIT-CONTEXT-PICK-ROOM**` when another Card precedes it.

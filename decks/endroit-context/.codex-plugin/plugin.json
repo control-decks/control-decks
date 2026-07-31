@@ -1,7 +1,7 @@
 {
   "name": "endroit-context",
   "version": "0.1.0",
-  "description": "Bind conversation to resolved Home, Workspace, Workstream, or Target context.",
+  "description": "Bind conversation to resolved Home, Room, Meeting, or Site context.",
   "author": {
     "name": "thevzion",
     "url": "https://github.com/thevzion"
@@ -12,18 +12,18 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Endroit Context",
-    "shortDescription": "Bind conversation to resolved Home, Workspace, Workstream, or Target context.",
-    "longDescription": "Bind conversation to resolved Home, Workspace, Workstream, or Target context. Human-invoked HACP Draft 0.4 cards from the Endroit Home Game.",
+    "shortDescription": "Bind conversation to resolved Home, Room, Meeting, or Site context.",
+    "longDescription": "Bind conversation to resolved Home, Room, Meeting, or Site context. Human-invoked HACP Draft 0.4 cards from the Endroit Home Game.",
     "developerName": "Control Decks",
     "category": "Productivity",
     "capabilities": [
-      "Pick Target Context",
-      "Any Target Context"
+      "Pick Site Context",
+      "Any Site Context"
     ],
     "brandColor": "#7357FF",
     "defaultPrompt": [
-      "$endroit-context:endroit-context-pick-target Use this card on the current working object.",
-      "$endroit-context:endroit-context-any-target Use this card on the current working object."
+      "$endroit-context:endroit-context-pick-site Use this card on the current working object.",
+      "$endroit-context:endroit-context-any-site Use this card on the current working object."
     ]
   }
 }

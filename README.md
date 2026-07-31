@@ -33,8 +33,8 @@ skills. A Deck is the plugin and installation unit; there is no root resolver.
   `rename-session`, `spawn-agents`, `generate-images`, `homekeeper`
 - Conversation: `further`, `zoom-in`, `zoom-out`, `show-snippets`,
   `show-use-cases`, `show-mindmap`
-- Endroit Home: `endroit-context-pick-target`,
-  `endroit-context-any-target`, `refresh-context`, `white-card`
+- Endroit Home: `endroit-context-pick-site`,
+  `endroit-context-any-site`, `refresh-context`, `white-card`
 - Clear: `clear-main-session`, `clear-homekeeper`, `clear-white-card`
 
 Cards never pretend a host feature exists. A provider-specific Card returns a
@@ -66,16 +66,16 @@ human-invocation policy without weakening Codex plugin validation.
 ```text
 games/<game>/game.json
 decks/<deck>/hacp.deck.json
-decks/<deck>/asset.json
+decks/<deck>/equipment.json
 decks/<deck>/capabilities/<card>.md
 decks/<deck>/skills/<wave-1-card>/SKILL.md
 decks/<deck>/.codex-plugin/plugin.json
 decks/<deck>/.claude-plugin/plugin.json
 ```
 
-`hacp.deck.json`, `asset.json`, and Capability Markdown are the source
+`hacp.deck.json`, `equipment.json`, and Capability Markdown are the source
 contracts. Plugin skills expose only Wave 1 and disable implicit invocation.
-Endroit Assets expose Cards as Commands only, keeping the catalogue out of the
+Endroit Equipment expose Cards as Commands only, keeping the catalogue out of the
 agent HUD until a human plays a Card.
 
 ## Develop

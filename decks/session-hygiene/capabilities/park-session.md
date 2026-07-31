@@ -26,7 +26,7 @@ provider: any
 
 **Effect:** Preserve a compact handoff and leave the current task resumable without closing it.
 
-**Limits:** Do not archive, close, or mutate a Target.
+**Limits:** Do not archive, close, or mutate a Site.
 
 ## Resolve
 

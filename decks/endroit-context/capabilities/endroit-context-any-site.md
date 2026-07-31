@@ -1,32 +1,32 @@
 ---
-id: route-workstream
-title: "Route Workstream"
-summary: "Resolve the unique continuing Workstream for the current object."
-deck: endroit-routing
+id: endroit-context-any-site
+title: "Any Site Context"
+summary: "Enumerate known Endroit Sites and select the unique semantic match for the current subject."
+deck: endroit-context
 game: endroit-home
 role: binding/select
 duration: once
 accepts: ["hacp/content", "hacp/result"]
 produces: hacp/binding
-wave: 0
+wave: 1
 provider: endroit-home
 ---
 
-# Route Workstream
+# Any Site Context
 
-**ID:** `endroit-routing/route-workstream`\
+**ID:** `endroit-context/endroit-context-any-site`\
 **HACP:** `0.4`\
 **Kind:** `binding`\
 **Mode:** `select`\
-**Traits:** `semantic`, `endroit-routing`\
-**Default Binding:** known-workstreams\
+**Traits:** `semantic`, `endroit-context`, `site-context`\
+**Default Binding:** known-sites\
 **Accepts:** `hacp/content`, `hacp/result`\
 **Produces:** `hacp/binding`\
 **Duration:** `once`
 
-**Effect:** Resolve the unique continuing Workstream for the current object.
+**Effect:** Enumerate known Endroit Sites and select the unique semantic match for the current subject.
 
-**Limits:** Ask on ambiguity and never create a Workstream without explicit durable intent.
+**Limits:** Ask when multiple Sites remain plausible; never search outside the Home to compensate.
 
 ## Resolve
 
@@ -39,5 +39,5 @@ provider: endroit-home
 ## Visibility
 
 Begin the combo trace with
-`> 🎯 **<binding>** → 🃏 **ROUTE-WORKSTREAM**` when used alone. Append
-`→ 🃏 **ROUTE-WORKSTREAM**` when another Card precedes it.
+`> 🎯 **<binding>** → 🃏 **ENDROIT-CONTEXT-ANY-SITE**` when used alone. Append
+`→ 🃏 **ENDROIT-CONTEXT-ANY-SITE**` when another Card precedes it.

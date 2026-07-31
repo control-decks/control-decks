@@ -1,0 +1,6 @@
+interface:
+  display_name: "Endroit Context · Pick Site Context"
+  short_description: "Select one known Endroit Site and load only its current inspe"
+  default_prompt: "Use $endroit-context:endroit-context-pick-site on the current working object."
+policy:
+  allow_implicit_invocation: false

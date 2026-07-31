@@ -1,7 +1,7 @@
 ---
-id: endroit-context-any-target
-title: "Any Target Context"
-summary: "Enumerate known Endroit Targets and select the unique semantic match for the current subject."
+id: endroit-context-pick-site
+title: "Pick Site Context"
+summary: "Select one known Endroit Site and load only its current inspectable context."
 deck: endroit-context
 game: endroit-home
 role: binding/select
@@ -12,21 +12,21 @@ wave: 1
 provider: endroit-home
 ---
 
-# Any Target Context
+# Pick Site Context
 
-**ID:** `endroit-context/endroit-context-any-target`\
+**ID:** `endroit-context/endroit-context-pick-site`\
 **HACP:** `0.4`\
 **Kind:** `binding`\
 **Mode:** `select`\
-**Traits:** `semantic`, `endroit-context`, `target-context`\
-**Default Binding:** known-targets\
+**Traits:** `semantic`, `endroit-context`, `site-context`\
+**Default Binding:** current-site\
 **Accepts:** `hacp/content`, `hacp/result`\
 **Produces:** `hacp/binding`\
 **Duration:** `once`
 
-**Effect:** Enumerate known Endroit Targets and select the unique semantic match for the current subject.
+**Effect:** Select one known Endroit Site and load only its current inspectable context.
 
-**Limits:** Ask when multiple Targets remain plausible; never search outside the Home to compensate.
+**Limits:** Require an explicit or uniquely resolvable Site; never guess a repository or mutate it.
 
 ## Resolve
 
@@ -39,5 +39,5 @@ provider: endroit-home
 ## Visibility
 
 Begin the combo trace with
-`> 🎯 **<binding>** → 🃏 **ENDROIT-CONTEXT-ANY-TARGET**` when used alone. Append
-`→ 🃏 **ENDROIT-CONTEXT-ANY-TARGET**` when another Card precedes it.
+`> 🎯 **<binding>** → 🃏 **ENDROIT-CONTEXT-PICK-SITE**` when used alone. Append
+`→ 🃏 **ENDROIT-CONTEXT-PICK-SITE**` when another Card precedes it.

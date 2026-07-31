@@ -1,8 +1,8 @@
 ---
-id: endroit-context-pick-workspace
-title: "Pick Workspace Context"
-summary: "Select one resolved Endroit Workspace and load its bounded durable context."
-deck: endroit-context
+id: route-site
+title: "Route Site"
+summary: "Resolve the unique Site that owns the requested product mutation."
+deck: endroit-routing
 game: endroit-home
 role: binding/select
 duration: once
@@ -12,21 +12,21 @@ wave: 0
 provider: endroit-home
 ---
 
-# Pick Workspace Context
+# Route Site
 
-**ID:** `endroit-context/endroit-context-pick-workspace`\
+**ID:** `endroit-routing/route-site`\
 **HACP:** `0.4`\
 **Kind:** `binding`\
 **Mode:** `select`\
-**Traits:** `semantic`, `endroit-context`, `workspace-context`\
-**Default Binding:** current-workspace\
+**Traits:** `semantic`, `endroit-routing`\
+**Default Binding:** known-sites\
 **Accepts:** `hacp/content`, `hacp/result`\
 **Produces:** `hacp/binding`\
 **Duration:** `once`
 
-**Effect:** Select one resolved Endroit Workspace and load its bounded durable context.
+**Effect:** Resolve the unique Site that owns the requested product mutation.
 
-**Limits:** Require an explicit or uniquely resolvable Workspace and read only linked material.
+**Limits:** Do not mutate or inspect outside known Site declarations.
 
 ## Resolve
 
@@ -39,5 +39,5 @@ provider: endroit-home
 ## Visibility
 
 Begin the combo trace with
-`> 🎯 **<binding>** → 🃏 **ENDROIT-CONTEXT-PICK-WORKSPACE**` when used alone. Append
-`→ 🃏 **ENDROIT-CONTEXT-PICK-WORKSPACE**` when another Card precedes it.
+`> 🎯 **<binding>** → 🃏 **ROUTE-SITE**` when used alone. Append
+`→ 🃏 **ROUTE-SITE**` when another Card precedes it.

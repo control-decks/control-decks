@@ -1,5 +1,5 @@
 {
-  "$schema": "https://endroit.org/schema/asset.json",
+  "$schema": "https://endroit.org/schema/equipment.json",
   "name": "control-decks/conversation-focus",
   "version": "0.1.0",
   "description": "Change the semantic scale or axis of the current object.",

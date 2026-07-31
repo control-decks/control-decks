@@ -1,7 +1,7 @@
 ---
-id: route-target
-title: "Route Target"
-summary: "Resolve the unique Target that owns the requested product mutation."
+id: route-meeting
+title: "Route Meeting"
+summary: "Resolve the unique active Meeting for the current object."
 deck: endroit-routing
 game: endroit-home
 role: binding/select
@@ -12,21 +12,21 @@ wave: 0
 provider: endroit-home
 ---
 
-# Route Target
+# Route Meeting
 
-**ID:** `endroit-routing/route-target`\
+**ID:** `endroit-routing/route-meeting`\
 **HACP:** `0.4`\
 **Kind:** `binding`\
 **Mode:** `select`\
 **Traits:** `semantic`, `endroit-routing`\
-**Default Binding:** known-targets\
+**Default Binding:** known-meetings\
 **Accepts:** `hacp/content`, `hacp/result`\
 **Produces:** `hacp/binding`\
 **Duration:** `once`
 
-**Effect:** Resolve the unique Target that owns the requested product mutation.
+**Effect:** Resolve the unique active Meeting for the current object.
 
-**Limits:** Do not mutate or inspect outside known Target declarations.
+**Limits:** Ask on ambiguity and never create or retain a Meeting implicitly.
 
 ## Resolve
 
@@ -39,5 +39,5 @@ provider: endroit-home
 ## Visibility
 
 Begin the combo trace with
-`> 🎯 **<binding>** → 🃏 **ROUTE-TARGET**` when used alone. Append
-`→ 🃏 **ROUTE-TARGET**` when another Card precedes it.
+`> 🎯 **<binding>** → 🃏 **ROUTE-MEETING**` when used alone. Append
+`→ 🃏 **ROUTE-MEETING**` when another Card precedes it.

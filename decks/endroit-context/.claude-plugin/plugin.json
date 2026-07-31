@@ -1,7 +1,7 @@
 {
   "name": "endroit-context",
   "version": "0.1.0",
-  "description": "Bind conversation to resolved Home, Workspace, Workstream, or Target context.",
+  "description": "Bind conversation to resolved Home, Room, Meeting, or Site context.",
   "author": {
     "name": "thevzion",
     "url": "https://github.com/thevzion"

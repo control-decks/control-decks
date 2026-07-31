@@ -27,7 +27,7 @@ provider: endroit-home
 
 **Effect:** Rebuild provider projections from canonical Home and Desk sources.
 
-**Limits:** Do not publish, push, mutate Targets, or edit generated projections as source.
+**Limits:** Do not publish, push, mutate Sites, or edit generated projections as source.
 
 ## Resolve
 

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://endroit.org/schema/equipment.json",
+  "name": "control-decks/endroit-context",
+  "version": "0.1.0",
+  "description": "Bind conversation to resolved Home, Room, Meeting, or Site context.",
+  "prefix": "endroit-context",
+  "files": [
+    "hacp.deck.json",
+    "capabilities/endroit-context-pick-site.md",
+    "capabilities/endroit-context-any-site.md",
+    "capabilities/endroit-context-pick-room.md",
+    "capabilities/endroit-context-pick-meeting.md"
+  ],
+  "capabilities": [
+    {
+      "id": "endroit-context-pick-site",
+      "path": "capabilities/endroit-context-pick-site.md",
+      "description": "Select one known Endroit Site and load only its current inspectable context."
+    },
+    {
+      "id": "endroit-context-any-site",
+      "path": "capabilities/endroit-context-any-site.md",
+      "description": "Enumerate known Endroit Sites and select the unique semantic match for the current subject."
+    },
+    {
+      "id": "endroit-context-pick-room",
+      "path": "capabilities/endroit-context-pick-room.md",
+      "description": "Select one resolved Endroit Room and load its bounded durable context."
+    },
+    {
+      "id": "endroit-context-pick-meeting",
+      "path": "capabilities/endroit-context-pick-meeting.md",
+      "description": "Select one active Endroit Meeting and load only its bounded hot context."
+    }
+  ],
+  "skills": [],
+  "commands": [
+    {
+      "id": "endroit-context-pick-site",
+      "capability": "endroit-context-pick-site",
+      "description": "Select one known Endroit Site and load only its current inspectable context.",
+      "forEach": "site"
+    },
+    {
+      "id": "endroit-context-any-site",
+      "capability": "endroit-context-any-site",
+      "description": "Enumerate known Endroit Sites and select the unique semantic match for the current subject."
+    }
+  ]
+}

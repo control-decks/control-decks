@@ -7,16 +7,16 @@
   },
   "cards": [
     {
-      "id": "endroit-context/endroit-context-pick-target",
-      "command": "endroit-context-pick-target",
+      "id": "endroit-context/endroit-context-pick-site",
+      "command": "endroit-context-pick-site",
       "kind": "binding",
       "mode": "select",
       "traits": [
         "semantic",
         "endroit-context",
-        "target-context"
+        "site-context"
       ],
-      "defaultBinding": "current-target",
+      "defaultBinding": "current-site",
       "accepts": [
         "hacp/content",
         "hacp/result"
@@ -26,16 +26,16 @@
       "relations": {}
     },
     {
-      "id": "endroit-context/endroit-context-any-target",
-      "command": "endroit-context-any-target",
+      "id": "endroit-context/endroit-context-any-site",
+      "command": "endroit-context-any-site",
       "kind": "binding",
       "mode": "select",
       "traits": [
         "semantic",
         "endroit-context",
-        "target-context"
+        "site-context"
       ],
-      "defaultBinding": "known-targets",
+      "defaultBinding": "known-sites",
       "accepts": [
         "hacp/content",
         "hacp/result"
@@ -45,16 +45,16 @@
       "relations": {}
     },
     {
-      "id": "endroit-context/endroit-context-pick-workspace",
-      "command": "endroit-context-pick-workspace",
+      "id": "endroit-context/endroit-context-pick-room",
+      "command": "endroit-context-pick-room",
       "kind": "binding",
       "mode": "select",
       "traits": [
         "semantic",
         "endroit-context",
-        "workspace-context"
+        "room-context"
       ],
-      "defaultBinding": "current-workspace",
+      "defaultBinding": "current-room",
       "accepts": [
         "hacp/content",
         "hacp/result"
@@ -64,16 +64,16 @@
       "relations": {}
     },
     {
-      "id": "endroit-context/endroit-context-pick-workstream",
-      "command": "endroit-context-pick-workstream",
+      "id": "endroit-context/endroit-context-pick-meeting",
+      "command": "endroit-context-pick-meeting",
       "kind": "binding",
       "mode": "select",
       "traits": [
         "semantic",
         "endroit-context",
-        "workstream-context"
+        "meeting-context"
       ],
-      "defaultBinding": "current-workstream",
+      "defaultBinding": "current-meeting",
       "accepts": [
         "hacp/content",
         "hacp/result"

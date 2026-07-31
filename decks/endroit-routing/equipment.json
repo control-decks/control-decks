@@ -1,5 +1,5 @@
 {
-  "$schema": "https://endroit.org/schema/asset.json",
+  "$schema": "https://endroit.org/schema/equipment.json",
   "name": "control-decks/endroit-routing",
   "version": "0.1.0",
   "description": "Refresh and route work through resolved Home identities.",
@@ -7,9 +7,9 @@
   "files": [
     "hacp.deck.json",
     "capabilities/refresh-context.md",
-    "capabilities/route-workspace.md",
-    "capabilities/route-workstream.md",
-    "capabilities/route-target.md",
+    "capabilities/route-room.md",
+    "capabilities/route-meeting.md",
+    "capabilities/route-site.md",
     "capabilities/show-hud.md"
   ],
   "capabilities": [
@@ -19,19 +19,19 @@
       "description": "Re-read the authoritative current context for the bound Home identity and report material changes."
     },
     {
-      "id": "route-workspace",
-      "path": "capabilities/route-workspace.md",
-      "description": "Resolve the unique owning Workspace for the current object."
+      "id": "route-room",
+      "path": "capabilities/route-room.md",
+      "description": "Resolve the unique owning Room for the current object."
     },
     {
-      "id": "route-workstream",
-      "path": "capabilities/route-workstream.md",
-      "description": "Resolve the unique continuing Workstream for the current object."
+      "id": "route-meeting",
+      "path": "capabilities/route-meeting.md",
+      "description": "Resolve the unique active Meeting for the current object."
     },
     {
-      "id": "route-target",
-      "path": "capabilities/route-target.md",
-      "description": "Resolve the unique Target that owns the requested product mutation."
+      "id": "route-site",
+      "path": "capabilities/route-site.md",
+      "description": "Resolve the unique Site that owns the requested product mutation."
     },
     {
       "id": "show-hud",
@@ -47,22 +47,22 @@
       "description": "Re-read the authoritative current context for the bound Home identity and report material changes."
     },
     {
-      "id": "refresh-workspace",
+      "id": "refresh-room",
       "capability": "refresh-context",
-      "description": "Refresh one resolved Workspace context.",
-      "forEach": "workspace"
+      "description": "Refresh one resolved Room context.",
+      "forEach": "room"
     },
     {
-      "id": "refresh-workstream",
+      "id": "refresh-meeting",
       "capability": "refresh-context",
-      "description": "Refresh one resolved Workstream context.",
-      "forEach": "workstream"
+      "description": "Refresh one resolved Meeting context.",
+      "forEach": "meeting"
     },
     {
-      "id": "refresh-target",
+      "id": "refresh-site",
       "capability": "refresh-context",
-      "description": "Refresh one resolved Target context.",
-      "forEach": "target"
+      "description": "Refresh one resolved Site context.",
+      "forEach": "site"
     }
   ]
 }

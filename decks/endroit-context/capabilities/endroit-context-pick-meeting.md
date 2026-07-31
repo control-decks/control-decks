@@ -1,7 +1,7 @@
 ---
-id: endroit-context-pick-workstream
-title: "Pick Workstream Context"
-summary: "Select one resolved Endroit Workstream and load its current resumable context."
+id: endroit-context-pick-meeting
+title: "Pick Meeting Context"
+summary: "Select one active Endroit Meeting and load only its bounded hot context."
 deck: endroit-context
 game: endroit-home
 role: binding/select
@@ -12,21 +12,21 @@ wave: 0
 provider: endroit-home
 ---
 
-# Pick Workstream Context
+# Pick Meeting Context
 
-**ID:** `endroit-context/endroit-context-pick-workstream`\
+**ID:** `endroit-context/endroit-context-pick-meeting`\
 **HACP:** `0.4`\
 **Kind:** `binding`\
 **Mode:** `select`\
-**Traits:** `semantic`, `endroit-context`, `workstream-context`\
-**Default Binding:** current-workstream\
+**Traits:** `semantic`, `endroit-context`, `meeting-context`\
+**Default Binding:** current-meeting\
 **Accepts:** `hacp/content`, `hacp/result`\
 **Produces:** `hacp/binding`\
 **Duration:** `once`
 
-**Effect:** Select one resolved Endroit Workstream and load its current resumable context.
+**Effect:** Select one active Endroit Meeting and load only its bounded hot context.
 
-**Limits:** Require an explicit or uniquely resolvable Workstream and never create one implicitly.
+**Limits:** Require an explicit or uniquely resolvable active Meeting; never create or retain one implicitly.
 
 ## Resolve
 
@@ -39,5 +39,5 @@ provider: endroit-home
 ## Visibility
 
 Begin the combo trace with
-`> 🎯 **<binding>** → 🃏 **ENDROIT-CONTEXT-PICK-WORKSTREAM**` when used alone. Append
-`→ 🃏 **ENDROIT-CONTEXT-PICK-WORKSTREAM**` when another Card precedes it.
+`> 🎯 **<binding>** → 🃏 **ENDROIT-CONTEXT-PICK-MEETING**` when used alone. Append
+`→ 🃏 **ENDROIT-CONTEXT-PICK-MEETING**` when another Card precedes it.
