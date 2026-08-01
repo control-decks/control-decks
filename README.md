@@ -41,10 +41,11 @@ Cards never pretend a host feature exists. A provider-specific Card returns a
 stable `blocked` result when its required task, delegation, image, or Endroit
 surface is unavailable.
 
-## Endroit workplace boundary
+## Open Workplace and Endroit boundary
 
-First-party `endroit/workplace` Equipment owns the Home-first activation
-surface:
+[Open Workplace](https://open-workplace.org/) proposes the workplace nouns and
+lifecycle transitions. First-party `endroit/workplace` Equipment resolves
+their concrete bindings and projects this activation surface:
 
 ```text
 enter-the-home
@@ -63,8 +64,9 @@ archive-this
 Control Decks keeps the corresponding Card and Capability contracts available
 for explicit HACP composition, but does not project duplicate Endroit commands.
 The existing delegation Card remains the mechanism behind `call`; no Role
-registry or agent runtime is introduced here. Endroit owns its nouns, bindings,
-activation names, and durable transitions.
+registry or agent runtime is introduced here. HACP defines optional explicit
+verbs and controls; Control Decks distributes concrete Cards; Endroit owns its
+bindings, activation names, projections, and persisted effects.
 
 ## Install
 
