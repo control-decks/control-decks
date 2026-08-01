@@ -80,7 +80,7 @@ for (const gameId of gameIds) {
       fail(`invalid plugin identity: ${deckId}`);
     }
     if (
-      equipment.$schema !== "https://endroit.org/schema/equipment.json"
+      equipment.$schema !== "https://endroit.org/schema/v7/equipment.json"
       || equipment.name !== `control-decks/${deckId}`
       || equipment.version !== "0.1.0"
     ) {

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://endroit.org/schema/equipment.json",
+  "$schema": "https://endroit.org/schema/v7/equipment.json",
   "name": "control-decks/session-lifecycle",
   "version": "0.1.0",
   "description": "Open, rename, hand off, refresh, and close tasks.",

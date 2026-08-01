@@ -1,5 +1,5 @@
 {
-  "$schema": "https://endroit.org/schema/equipment.json",
+  "$schema": "https://endroit.org/schema/v7/equipment.json",
   "name": "control-decks/endroit-routing",
   "version": "0.1.0",
   "description": "Refresh and route work through resolved Home identities.",

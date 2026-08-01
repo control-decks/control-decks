@@ -1,5 +1,5 @@
 {
-  "$schema": "https://endroit.org/schema/equipment.json",
+  "$schema": "https://endroit.org/schema/v7/equipment.json",
   "name": "control-decks/session-hygiene",
   "version": "0.1.0",
   "description": "Keep long-lived sessions and their Home metadata clean.",
