@@ -41,7 +41,7 @@
     {
       "id": "bind-engineer-role",
       "path": "capabilities/bind-engineer-role.md",
-      "description": "Apply the Home-owned engineer Role to the current Occupant for the bound work."
+      "description": "Bind the temporary engineer Role adopted by the current Occupant to the resolved Meeting."
     },
     {
       "id": "activate-research-equipment",

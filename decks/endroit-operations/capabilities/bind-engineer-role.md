@@ -1,7 +1,7 @@
 ---
 id: bind-engineer-role
 title: "Bind Engineer Role"
-summary: "Apply the Home-owned engineer Role to the current Occupant for the bound work."
+summary: "Bind the temporary engineer Role adopted by the current Occupant to the resolved Meeting."
 deck: endroit-operations
 game: endroit-home
 role: operation/action
@@ -25,9 +25,9 @@ provider: endroit-home
 **Produces:** `endroit-operations/role-binding-result`\
 **Duration:** `once`
 
-**Effect:** Ask Endroit to apply the Home-owned `engineer` Role to the current Occupant for the bound work.
+**Effect:** Ask Endroit to bind the temporary `engineer` Role adopted by the current Occupant to the resolved Meeting.
 
-**Limits:** Use only an existing resolved Role and Occupant. Do not create a Role registry, an agent runtime, or a persistent provider identity. Return `blocked` when Endroit cannot resolve or apply the binding.
+**Limits:** Use only instructions supplied by installed, trusted Equipment and a resolved Occupant and Meeting. The Role is a temporary mandate adopted by the Occupant, not a Home-owned object. Do not create a Role registry, an agent runtime, or a persistent provider identity. Return `blocked` when Endroit cannot resolve or apply the binding.
 
 ## Resolve
 
