@@ -34,13 +34,5 @@
     }
   ],
   "skills": [],
-  "commands": [
-    {
-      "id": "endroit-context-pick-site",
-      "capability": "endroit-context-pick-site",
-      "description": "Select one known Endroit Site and load only its current inspectable context.",
-      "forEach": "site",
-      "projectedName": "work-on-{route}"
-    }
-  ]
+  "commands": []
 }

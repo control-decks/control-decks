@@ -40,19 +40,5 @@
     }
   ],
   "skills": [],
-  "commands": [
-    {
-      "id": "refresh-context",
-      "capability": "refresh-context",
-      "description": "Enter the Home and re-read its authoritative current context.",
-      "projectedName": "enter-the-home"
-    },
-    {
-      "id": "refresh-room",
-      "capability": "refresh-context",
-      "description": "Enter one resolved Room and re-read its authoritative context.",
-      "forEach": "room",
-      "projectedName": "enter-the-{route}-room"
-    }
-  ]
+  "commands": []
 }

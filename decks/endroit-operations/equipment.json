@@ -80,49 +80,6 @@
       "id": "clear-white-card",
       "capability": "clear-white-card",
       "description": "Stop the active White Card operation without changing completed results."
-    },
-    {
-      "id": "bind-engineer-role",
-      "capability": "bind-engineer-role",
-      "description": "Work as the Home-owned engineer Role for the bound work.",
-      "projectedName": "work-as-an-engineer"
-    },
-    {
-      "id": "activate-research-equipment",
-      "capability": "activate-research-equipment",
-      "description": "Use the Home-owned research Equipment for the bound work.",
-      "projectedName": "use-research"
-    },
-    {
-      "id": "retain-material",
-      "capability": "retain-material",
-      "description": "Retain the current object as inspectable Room-owned Material.",
-      "projectedName": "retain-this"
-    },
-    {
-      "id": "accept-material",
-      "capability": "accept-material",
-      "description": "Accept the current object as explicit Room truth.",
-      "projectedName": "accept-this"
-    },
-    {
-      "id": "deliver-material",
-      "capability": "deliver-material",
-      "description": "Deliver current Material through its uniquely resolved Route.",
-      "projectedName": "deliver-this"
-    },
-    {
-      "id": "deliver-material-to-site",
-      "capability": "deliver-material",
-      "description": "Deliver current Material through the selected Site Route.",
-      "forEach": "site",
-      "projectedName": "deliver-this-to-{route}"
-    },
-    {
-      "id": "archive-material",
-      "capability": "archive-material",
-      "description": "Archive current Material inside its owning Room.",
-      "projectedName": "archive-this"
     }
   ]
 }

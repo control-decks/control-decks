@@ -41,10 +41,10 @@ Cards never pretend a host feature exists. A provider-specific Card returns a
 stable `blocked` result when its required task, delegation, image, or Endroit
 surface is unavailable.
 
-## Endroit workplace projections
+## Endroit workplace boundary
 
-HACP Card IDs stay stable, while their optional Endroit Equipment accessors
-use `projectedName` to expose the Home-first language:
+First-party `endroit/workplace` Equipment owns the Home-first activation
+surface:
 
 ```text
 enter-the-home
@@ -60,11 +60,11 @@ deliver-this-to-<site>
 archive-this
 ```
 
-`call-the-researcher` reuses the existing delegation Card. The Role,
-Equipment, Material, and Route operations call Endroit's resolved workplace;
-they do not introduce a registry or runtime here. Endroit owns its nouns,
-bindings, and durable transitions. HACP only composes and controls these Cards
-when a human explicitly plays one.
+Control Decks keeps the corresponding Card and Capability contracts available
+for explicit HACP composition, but does not project duplicate Endroit commands.
+The existing delegation Card remains the mechanism behind `call`; no Role
+registry or agent runtime is introduced here. Endroit owns its nouns, bindings,
+activation names, and durable transitions.
 
 ## Install
 
@@ -101,8 +101,9 @@ decks/<deck>/.claude-plugin/plugin.json
 `hacp.deck.json`, `equipment.json`, and Capability Markdown are the source
 contracts. Plugin skills expose only Wave 1 and disable implicit invocation.
 Endroit Equipment expose Cards as Commands only, keeping the catalogue out of
-the agent HUD until a human plays a Card. A `projectedName` changes only that
-Endroit activation surface; it does not rename the Card.
+the agent HUD until a human plays a Card. Workplace Cards whose activation
+surface is first-party Endroit remain capabilities without duplicate Equipment
+accessors.
 
 ## Develop
 

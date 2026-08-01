@@ -32,7 +32,7 @@ const expectedWave = new Set([
   "white-card",
   "clear-white-card",
 ]);
-const expectedWorkplaceProjections = new Set([
+const reservedWorkplaceProjections = new Set([
   "enter-the-home",
   "enter-the-{route}-room",
   "work-on-{route}",
@@ -57,7 +57,7 @@ if (gameIds.join(",") !== "conversation,endroit-home,session") {
 const seenDecks = new Set();
 const seenCards = new Set();
 const projected = new Set();
-const workplaceProjections = new Set();
+const projectedNames = new Set();
 
 for (const gameId of gameIds) {
   const game = await readJson(`games/${gameId}/game.json`);
@@ -142,8 +142,11 @@ for (const gameId of gameIds) {
         fail(`routed command must project {route}: ${deckId}/${accessor.id}`);
       }
       if (accessor.projectedName) {
-        if (workplaceProjections.has(name)) fail(`duplicate projected command name: ${name}`);
-        workplaceProjections.add(name);
+        if (projectedNames.has(name)) fail(`duplicate projected command name: ${name}`);
+        projectedNames.add(name);
+      }
+      if (reservedWorkplaceProjections.has(name)) {
+        fail(`first-party Endroit workplace command must not be projected by Control Decks: ${name}`);
       }
       if (["endroit-context", "endroit-routing"].includes(deckId) && /(^|-)(pick|refresh)(-|$)/.test(name)) {
         fail(`technical workplace command remains public: ${name}`);
@@ -156,12 +159,6 @@ if (seenDecks.size !== 11) fail(`expected 11 Decks, found ${seenDecks.size}`);
 if (seenCards.size !== 54) fail(`expected 54 Cards, found ${seenCards.size}`);
 if (projected.size !== expectedWave.size || [...expectedWave].some((id) => !projected.has(id))) {
   fail(`Wave 1 mismatch: ${[...projected].sort().join(", ")}`);
-}
-if (
-  workplaceProjections.size !== expectedWorkplaceProjections.size
-  || [...expectedWorkplaceProjections].some((name) => !workplaceProjections.has(name))
-) {
-  fail(`workplace projection mismatch: ${[...workplaceProjections].sort().join(", ")}`);
 }
 
 const codexMarketplace = await readJson(".agents/plugins/marketplace.json");
