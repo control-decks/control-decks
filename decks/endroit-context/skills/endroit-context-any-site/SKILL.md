@@ -32,4 +32,3 @@ description: "Enumerate known Endroit Sites and select the unique semantic match
 Begin the combo trace with
 `> 🎯 **<binding>** → 🃏 **ENDROIT-CONTEXT-ANY-SITE**` when used alone. Append
 `→ 🃏 **ENDROIT-CONTEXT-ANY-SITE**` when another Card precedes it.
-

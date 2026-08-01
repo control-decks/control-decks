@@ -32,4 +32,3 @@ description: "Select one known Endroit Site and load only its current inspectabl
 Begin the combo trace with
 `> 🎯 **<binding>** → 🃏 **ENDROIT-CONTEXT-PICK-SITE**` when used alone. Append
 `→ 🃏 **ENDROIT-CONTEXT-PICK-SITE**` when another Card precedes it.
-
