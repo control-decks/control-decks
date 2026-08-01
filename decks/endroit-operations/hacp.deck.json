@@ -104,6 +104,150 @@
           "home-evidence"
         ]
       }
+    },
+    {
+      "id": "endroit-operations/bind-engineer-role",
+      "command": "bind-engineer-role",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "endroit-workplace",
+        "role-binding"
+      ],
+      "defaultBinding": "current-work",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "endroit-operations/role-binding-result",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "endroit-operations/activate-research-equipment",
+      "command": "activate-research-equipment",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "endroit-workplace",
+        "equipment-activation"
+      ],
+      "defaultBinding": "current-work",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "endroit-operations/equipment-activation-result",
+      "duration": "once",
+      "relations": {}
+    },
+    {
+      "id": "endroit-operations/retain-material",
+      "command": "retain-material",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "mutation",
+        "material-transition"
+      ],
+      "defaultBinding": "current-object",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "endroit-operations/retain-result",
+      "duration": "once",
+      "relations": {
+        "blockedByTraits": [
+          "mutation-guard"
+        ]
+      }
+    },
+    {
+      "id": "endroit-operations/accept-material",
+      "command": "accept-material",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "mutation",
+        "material-transition"
+      ],
+      "defaultBinding": "current-material",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "endroit-operations/accept-result",
+      "duration": "once",
+      "relations": {
+        "blockedByTraits": [
+          "mutation-guard"
+        ]
+      }
+    },
+    {
+      "id": "endroit-operations/deliver-material",
+      "command": "deliver-material",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "mutation",
+        "external-effect",
+        "material-transition"
+      ],
+      "defaultBinding": "current-material-and-route",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "endroit-operations/delivery-result",
+      "duration": "once",
+      "relations": {
+        "blockedByTraits": [
+          "mutation-guard",
+          "external-access-guard"
+        ]
+      }
+    },
+    {
+      "id": "endroit-operations/archive-material",
+      "command": "archive-material",
+      "kind": "operation",
+      "mode": "action",
+      "traits": [
+        "mutation",
+        "material-transition"
+      ],
+      "defaultBinding": "current-material",
+      "accepts": [
+        "hacp/content",
+        "hacp/result"
+      ],
+      "requires": [
+        "hacp/user-authorized-scope"
+      ],
+      "produces": "endroit-operations/archive-result",
+      "duration": "once",
+      "relations": {
+        "blockedByTraits": [
+          "mutation-guard"
+        ]
+      }
     }
   ]
 }

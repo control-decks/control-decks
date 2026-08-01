@@ -32,6 +32,19 @@ const expectedWave = new Set([
   "white-card",
   "clear-white-card",
 ]);
+const expectedWorkplaceProjections = new Set([
+  "enter-the-home",
+  "enter-the-{route}-room",
+  "work-on-{route}",
+  "call-the-researcher",
+  "work-as-an-engineer",
+  "use-research",
+  "retain-this",
+  "accept-this",
+  "deliver-this",
+  "deliver-this-to-{route}",
+  "archive-this",
+]);
 
 const gameIds = (await readdir(join(root, "games"), { withFileTypes: true }))
   .filter((entry) => entry.isDirectory())
@@ -44,6 +57,7 @@ if (gameIds.join(",") !== "conversation,endroit-home,session") {
 const seenDecks = new Set();
 const seenCards = new Set();
 const projected = new Set();
+const workplaceProjections = new Set();
 
 for (const gameId of gameIds) {
   const game = await readJson(`games/${gameId}/game.json`);
@@ -118,13 +132,36 @@ for (const gameId of gameIds) {
     if (accessors.some(({ forEach }) => forEach && !["room", "meeting", "site"].includes(forEach))) {
       fail(`Equipment accessor has an invalid forEach value: ${deckId}`);
     }
+    for (const accessor of accessors) {
+      const name = accessor.projectedName ?? `${equipment.prefix}-${accessor.id}`;
+      const normalized = name.replaceAll("{route}", "route");
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(normalized) || /[{}]/.test(normalized)) {
+        fail(`invalid projected command name: ${deckId}/${accessor.id}`);
+      }
+      if (accessor.forEach && !name.includes("{route}")) {
+        fail(`routed command must project {route}: ${deckId}/${accessor.id}`);
+      }
+      if (accessor.projectedName) {
+        if (workplaceProjections.has(name)) fail(`duplicate projected command name: ${name}`);
+        workplaceProjections.add(name);
+      }
+      if (["endroit-context", "endroit-routing"].includes(deckId) && /(^|-)(pick|refresh)(-|$)/.test(name)) {
+        fail(`technical workplace command remains public: ${name}`);
+      }
+    }
   }
 }
 
 if (seenDecks.size !== 11) fail(`expected 11 Decks, found ${seenDecks.size}`);
-if (seenCards.size !== 48) fail(`expected 48 Cards, found ${seenCards.size}`);
+if (seenCards.size !== 54) fail(`expected 54 Cards, found ${seenCards.size}`);
 if (projected.size !== expectedWave.size || [...expectedWave].some((id) => !projected.has(id))) {
   fail(`Wave 1 mismatch: ${[...projected].sort().join(", ")}`);
+}
+if (
+  workplaceProjections.size !== expectedWorkplaceProjections.size
+  || [...expectedWorkplaceProjections].some((name) => !workplaceProjections.has(name))
+) {
+  fail(`workplace projection mismatch: ${[...workplaceProjections].sort().join(", ")}`);
 }
 
 const codexMarketplace = await readJson(".agents/plugins/marketplace.json");

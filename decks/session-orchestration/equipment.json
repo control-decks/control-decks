@@ -50,6 +50,12 @@
       "id": "generate-images",
       "capability": "generate-images",
       "description": "Generate the requested count of images from the bound visual brief."
+    },
+    {
+      "id": "call-researcher",
+      "capability": "delegate-task",
+      "description": "Call one researcher as a temporary Occupant for the bounded task.",
+      "projectedName": "call-the-researcher"
     }
   ]
 }

@@ -20,8 +20,8 @@ distribution conventions; `game.json` is deliberately repo-local.
 | --- | --- | ---: | ---: |
 | Session | Shape, open, route, and maintain agent sessions. | 4 | 19 |
 | Conversation | Extend, focus, substantiate, and render thought. | 4 | 16 |
-| Endroit Home | Select resolved Home context and operate within it. | 3 | 13 |
-| **Total** |  | **11** | **48** |
+| Endroit Home | Enter resolved Home context and operate within it. | 3 | 19 |
+| **Total** |  | **11** | **54** |
 
 Every Card has a provider-neutral Capability contract. Wave 1 projects 18
 flagship Cards and 3 matching `clear` Cards as explicit Codex and Claude
@@ -40,6 +40,31 @@ skills. A Deck is the plugin and installation unit; there is no root resolver.
 Cards never pretend a host feature exists. A provider-specific Card returns a
 stable `blocked` result when its required task, delegation, image, or Endroit
 surface is unavailable.
+
+## Endroit workplace projections
+
+HACP Card IDs stay stable, while their optional Endroit Equipment accessors
+use `projectedName` to expose the Home-first language:
+
+```text
+enter-the-home
+enter-the-<room>-room
+work-on-<site>
+call-the-researcher
+work-as-an-engineer
+use-research
+retain-this
+accept-this
+deliver-this
+deliver-this-to-<site>
+archive-this
+```
+
+`call-the-researcher` reuses the existing delegation Card. The Role,
+Equipment, Material, and Route operations call Endroit's resolved workplace;
+they do not introduce a registry or runtime here. Endroit owns its nouns,
+bindings, and durable transitions. HACP only composes and controls these Cards
+when a human explicitly plays one.
 
 ## Install
 
@@ -75,8 +100,9 @@ decks/<deck>/.claude-plugin/plugin.json
 
 `hacp.deck.json`, `equipment.json`, and Capability Markdown are the source
 contracts. Plugin skills expose only Wave 1 and disable implicit invocation.
-Endroit Equipment expose Cards as Commands only, keeping the catalogue out of the
-agent HUD until a human plays a Card.
+Endroit Equipment expose Cards as Commands only, keeping the catalogue out of
+the agent HUD until a human plays a Card. A `projectedName` changes only that
+Endroit activation surface; it does not rename the Card.
 
 ## Develop
 

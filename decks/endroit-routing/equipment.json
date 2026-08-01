@@ -44,25 +44,15 @@
     {
       "id": "refresh-context",
       "capability": "refresh-context",
-      "description": "Re-read the authoritative current context for the bound Home identity and report material changes."
+      "description": "Enter the Home and re-read its authoritative current context.",
+      "projectedName": "enter-the-home"
     },
     {
       "id": "refresh-room",
       "capability": "refresh-context",
-      "description": "Refresh one resolved Room context.",
-      "forEach": "room"
-    },
-    {
-      "id": "refresh-meeting",
-      "capability": "refresh-context",
-      "description": "Refresh one resolved Meeting context.",
-      "forEach": "meeting"
-    },
-    {
-      "id": "refresh-site",
-      "capability": "refresh-context",
-      "description": "Refresh one resolved Site context.",
-      "forEach": "site"
+      "description": "Enter one resolved Room and re-read its authoritative context.",
+      "forEach": "room",
+      "projectedName": "enter-the-{route}-room"
     }
   ]
 }
