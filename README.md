@@ -1,6 +1,14 @@
 # Control Decks
 
-Human-invoked command cards for directing agent sessions and conversations.
+**Use AI. Keep agency.**
+
+Play a card. Shape the agent's next move.
+
+> **Surface:** experimental `main`, unreleased and ahead of tagged `v0.1.0`
+> **Current tree:** 3 Games · 11 Decks · 54 Cards · 21 Wave 1 provider skills
+> **Distribution metadata:** `0.1.0` · GitHub and local installation only
+> **Owner and publisher:** Control Decks
+> **Primary action:** [Explore the Decks](#decks)
 
 Control Decks is the experimental catalogue for the
 [Human-Agent Control Protocol](https://github.com/control-decks/human-agent-control-protocol).
@@ -23,6 +31,20 @@ distribution conventions; `game.json` is deliberately repo-local.
 | Endroit Home | Enter resolved Home context and operate within it. | 3 | 19 |
 | **Total** |  | **11** | **54** |
 
+## Decks
+
+- Session: [`session-intents`](decks/session-intents),
+  [`session-lifecycle`](decks/session-lifecycle),
+  [`session-orchestration`](decks/session-orchestration), and
+  [`session-hygiene`](decks/session-hygiene).
+- Conversation: [`conversation-extension`](decks/conversation-extension),
+  [`conversation-focus`](decks/conversation-focus),
+  [`conversation-evidence`](decks/conversation-evidence), and
+  [`conversation-view`](decks/conversation-view).
+- Endroit Home: [`endroit-context`](decks/endroit-context),
+  [`endroit-routing`](decks/endroit-routing), and
+  [`endroit-operations`](decks/endroit-operations).
+
 Every Card has a provider-neutral Capability contract. Wave 1 projects 18
 flagship Cards and 3 matching `clear` Cards as explicit Codex and Claude
 skills. A Deck is the plugin and installation unit; there is no root resolver.
@@ -43,9 +65,12 @@ surface is unavailable.
 
 ## Open Workplace and Endroit boundary
 
-[Open Workplace](https://open-workplace.org/) proposes the workplace nouns and
-lifecycle transitions. First-party `endroit/workplace` Equipment resolves
-their concrete bindings and projects this activation surface:
+[Open Workplace Protocol, Working Draft
+0.1](https://open-workplace.org/PROTOCOL.md) proposes the workplace nouns and
+lifecycle transitions used by the Endroit Home Game. The Session and
+Conversation Games depend on HACP, not Open Workplace. First-party
+`endroit/workplace` Equipment resolves concrete workplace bindings and projects
+this activation surface:
 
 ```text
 enter-the-home
@@ -120,5 +145,7 @@ marketplaces, plugin manifests, and selective installation.
 
 ## Maturity
 
-Control Decks 0.x is intentionally experimental. All Decks use lockstep version
-`0.1.0` while their boundaries are tested in daily use.
+Control Decks 0.x is intentionally experimental. All Decks still use lockstep
+distribution metadata `0.1.0` while their boundaries are tested in daily use.
+The tagged `v0.1.0` release is the historical 48-Card baseline; the current
+54-Card `main` tree is unreleased.

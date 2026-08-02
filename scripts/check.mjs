@@ -166,4 +166,18 @@ if (codexMarketplace.plugins.length !== 11) {
   fail("the Codex marketplace must expose exactly 11 Deck plugins");
 }
 
+const readme = await readFile(join(root, "README.md"), "utf8");
+const normalizedReadme = readme.replace(/\s+/g, " ");
+for (const required of [
+  "unreleased and ahead of tagged `v0.1.0`",
+  "3 Games · 11 Decks · 54 Cards · 21 Wave 1 provider skills",
+  "https://open-workplace.org/PROTOCOL.md",
+  "The Session and Conversation Games depend on HACP, not Open Workplace.",
+]) {
+  if (!normalizedReadme.includes(required)) fail(`README public-surface claim missing: ${required}`);
+}
+for (const deckId of seenDecks) {
+  if (!readme.includes(`](decks/${deckId})`)) fail(`README Deck index missing: ${deckId}`);
+}
+
 console.log(`valid: ${gameIds.length} Games, ${seenDecks.size} Decks, ${seenCards.size} Cards, ${projected.size} Wave 1 skills`);
