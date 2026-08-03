@@ -68,9 +68,10 @@ surface is unavailable.
 [Open Workplace Protocol, Working Draft
 0.1](https://open-workplace.org/PROTOCOL.md) proposes the workplace nouns and
 lifecycle transitions used by the Endroit Home Game. The Session and
-Conversation Games depend on HACP, not Open Workplace. First-party
-`endroit/workplace` Equipment resolves concrete workplace bindings and projects
-this activation surface:
+Conversation Games depend on HACP, not Open Workplace. Endroit is the
+Workplace-first application framework; its first-party `endroit/workplace`
+Equipment resolves concrete workplace bindings and projects this activation
+surface:
 
 ```text
 enter-the-home
