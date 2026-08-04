@@ -16,12 +16,13 @@ on:
         required: true
         type: string
       mode:
-        description: Check the delivery or apply it
+        description: Check only or publish to production
         required: true
+        default: check
         type: choice
         options:
           - check
-          - apply
+          - production
 
 permissions:
   contents: write
@@ -86,7 +87,7 @@ jobs:
             [[ "$(git cat-file -t "refs/tags/$tag")" = "tag" ]] || { echo "$tag exists but is not annotated" >&2; exit 1; }
             [[ "$(git rev-parse "refs/tags/$tag^{commit}")" = "$EXPECTED_SHA" ]] || { echo "$tag points to a different commit" >&2; exit 1; }
             [[ "$(git for-each-ref --format='%(contents)' "refs/tags/$tag")" = "$tag_message" ]] || { echo "$tag annotation differs from this release" >&2; exit 1; }
-          elif [[ "$MODE" = "apply" ]]; then
+          elif [[ "$MODE" = "production" ]]; then
             git \
               -c user.name="github-actions[bot]" \
               -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
@@ -105,7 +106,7 @@ jobs:
               <<<"$release_json" >/dev/null || { echo "GitHub Release $tag differs from this release" >&2; exit 1; }
           else
             grep --ignore-case --extended-regexp 'release not found|HTTP 404|Not Found' "$release_error" >/dev/null || { cat "$release_error" >&2; exit 1; }
-            if [[ "$MODE" = "apply" ]]; then
+            if [[ "$MODE" = "production" ]]; then
               gh release create "$tag" \
                 --repo "$GITHUB_REPOSITORY" \
                 --verify-tag \

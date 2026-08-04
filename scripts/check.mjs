@@ -177,12 +177,18 @@ for (const required of [
   "release_id:",
   "expected_sha:",
   "lock_digest:",
+  "default: check",
+  "          - production",
   "environment: production",
   "npm run verify",
+  '[[ "$MODE" = "production" ]]',
   'tag="v0.2.0"',
   "gh release create",
 ]) {
   if (!delivery.includes(required)) fail(`delivery workflow contract missing: ${required}`);
+}
+if (delivery.includes('[[ "$MODE" = "apply" ]]') || delivery.includes("          - apply")) {
+  fail("delivery workflow mode must be check or production");
 }
 if (/npm\s+(publish|pack)/.test(delivery)) fail("Control Decks delivery must not publish to npm");
 
