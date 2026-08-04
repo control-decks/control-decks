@@ -65,10 +65,11 @@ surface is unavailable.
 
 ## Open Workplace and Endroit boundary
 
-[Open Workplace Protocol, Working Draft
-0.1](https://open-workplace.org/PROTOCOL.md) proposes the workplace nouns and
-lifecycle transitions used by the Endroit Home Game. The Session and
-Conversation Games depend on HACP, not Open Workplace. Endroit is the
+[Open Workplace Protocol, Draft
+0.2](https://open-workplace.org/protocol/) defines implementation-neutral
+responsibilities and interoperability boundaries. The Endroit Home Game uses
+Endroit's Profile vocabulary to realize those responsibilities. The Session
+and Conversation Games depend on HACP, not Open Workplace. Endroit is the
 Workplace-first application framework; its first-party `endroit/workplace`
 Equipment resolves concrete workplace bindings and projects this activation
 surface:

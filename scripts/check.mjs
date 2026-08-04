@@ -171,7 +171,7 @@ const normalizedReadme = readme.replace(/\s+/g, " ");
 for (const required of [
   "unreleased and ahead of tagged `v0.1.0`",
   "3 Games · 11 Decks · 54 Cards · 21 Wave 1 provider skills",
-  "https://open-workplace.org/PROTOCOL.md",
+  "https://open-workplace.org/protocol/",
   "The Session and Conversation Games depend on HACP, not Open Workplace.",
 ]) {
   if (!normalizedReadme.includes(required)) fail(`README public-surface claim missing: ${required}`);
