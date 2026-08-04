@@ -171,6 +171,21 @@ if (packageManifest.version !== "0.2.0") {
   fail("the catalogue release candidate must be 0.2.0");
 }
 
+const delivery = await readFile(join(root, ".github/workflows/deliver.yml"), "utf8");
+for (const required of [
+  "workflow_dispatch:",
+  "release_id:",
+  "expected_sha:",
+  "lock_digest:",
+  "environment: production",
+  "npm run verify",
+  'tag="v0.2.0"',
+  "gh release create",
+]) {
+  if (!delivery.includes(required)) fail(`delivery workflow contract missing: ${required}`);
+}
+if (/npm\s+(publish|pack)/.test(delivery)) fail("Control Decks delivery must not publish to npm");
+
 const readme = await readFile(join(root, "README.md"), "utf8");
 const normalizedReadme = readme.replace(/\s+/g, " ");
 for (const required of [

@@ -1,0 +1,117 @@
+name: Deliver
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_id:
+        description: Release identifier owning this delivery
+        required: true
+        type: string
+      expected_sha:
+        description: Exact Control Decks commit to release
+        required: true
+        type: string
+      lock_digest:
+        description: Digest of the owning release lock
+        required: true
+        type: string
+      mode:
+        description: Check the delivery or apply it
+        required: true
+        type: choice
+        options:
+          - check
+          - apply
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deliver-control-decks-${{ inputs.release_id }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Validate delivery intent
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+          LOCK_DIGEST: ${{ inputs.lock_digest }}
+          RELEASE_ID: ${{ inputs.release_id }}
+        run: |
+          set -euo pipefail
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "expected_sha must be a full lowercase commit SHA" >&2; exit 1; }
+          [[ "$GITHUB_SHA" = "$EXPECTED_SHA" ]] || { echo "workflow SHA $GITHUB_SHA differs from expected SHA $EXPECTED_SHA" >&2; exit 1; }
+          [[ "$RELEASE_ID" =~ ^[A-Za-z0-9._-]+$ ]] || { echo "release_id contains unsupported characters" >&2; exit 1; }
+          [[ "$LOCK_DIGEST" =~ ^[A-Za-z0-9:+/=_-]+$ ]] || { echo "lock_digest contains unsupported characters" >&2; exit 1; }
+
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: ${{ inputs.expected_sha }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Verify exact candidate
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+          [[ "$(git rev-parse HEAD)" = "$EXPECTED_SHA" ]] || { echo "checkout does not match expected_sha" >&2; exit 1; }
+          [[ "$(node -p "require('./package.json').version")" = "0.2.0" ]] || { echo "package version must be 0.2.0" >&2; exit 1; }
+          npm run verify
+
+      - name: Check or create the exact tag and GitHub Release
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+          GH_TOKEN: ${{ github.token }}
+          LOCK_DIGEST: ${{ inputs.lock_digest }}
+          MODE: ${{ inputs.mode }}
+          RELEASE_ID: ${{ inputs.release_id }}
+        run: |
+          set -euo pipefail
+
+          tag="v0.2.0"
+          title="Control Decks 0.2.0"
+          tag_message=$(printf 'Control Decks 0.2.0\n\nRelease: %s\nLock-Digest: %s' "$RELEASE_ID" "$LOCK_DIGEST")
+          release_body=$(printf 'Control Decks 0.2.0.\n\nRelease: `%s`\nLock digest: `%s`\nCommit: `%s`' "$RELEASE_ID" "$LOCK_DIGEST" "$EXPECTED_SHA")
+
+          remote_tag=$(git ls-remote --tags origin "refs/tags/$tag" | cut -f1)
+          if [[ -n "$remote_tag" ]]; then
+            git fetch --force --no-tags origin "refs/tags/$tag:refs/tags/$tag"
+            [[ "$(git cat-file -t "refs/tags/$tag")" = "tag" ]] || { echo "$tag exists but is not annotated" >&2; exit 1; }
+            [[ "$(git rev-parse "refs/tags/$tag^{commit}")" = "$EXPECTED_SHA" ]] || { echo "$tag points to a different commit" >&2; exit 1; }
+            [[ "$(git for-each-ref --format='%(contents)' "refs/tags/$tag")" = "$tag_message" ]] || { echo "$tag annotation differs from this release" >&2; exit 1; }
+          elif [[ "$MODE" = "apply" ]]; then
+            git \
+              -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              tag --annotate "$tag" --message "$tag_message" "$EXPECTED_SHA"
+            git push origin "refs/tags/$tag"
+          else
+            echo "check: would create annotated tag $tag at $EXPECTED_SHA"
+          fi
+
+          release_error=$(mktemp)
+          if release_json=$(gh release view "$tag" --repo "$GITHUB_REPOSITORY" --json name,isDraft,isPrerelease,body 2>"$release_error"); then
+            jq --exit-status \
+              --arg title "$title" \
+              --arg body "$release_body" \
+              '.name == $title and .isDraft == false and .isPrerelease == false and .body == $body' \
+              <<<"$release_json" >/dev/null || { echo "GitHub Release $tag differs from this release" >&2; exit 1; }
+          else
+            grep --ignore-case --extended-regexp 'release not found|HTTP 404|Not Found' "$release_error" >/dev/null || { cat "$release_error" >&2; exit 1; }
+            if [[ "$MODE" = "apply" ]]; then
+              gh release create "$tag" \
+                --repo "$GITHUB_REPOSITORY" \
+                --verify-tag \
+                --title "$title" \
+                --notes "$release_body"
+            else
+              echo "check: would create GitHub Release $tag"
+            fi
+          fi
