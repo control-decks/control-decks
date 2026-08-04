@@ -4,9 +4,9 @@
 
 Play a card. Shape the agent's next move.
 
-> **Surface:** experimental `main`, unreleased and ahead of tagged `v0.1.0`
+> **Surface:** `0.2.0` release candidate for HACP Draft 0.4
 > **Current tree:** 3 Games · 11 Decks · 54 Cards · 21 Wave 1 provider skills
-> **Distribution metadata:** `0.1.0` · GitHub and local installation only
+> **Catalogue release:** `0.2.0` · GitHub and local installation only
 > **Owner and publisher:** Control Decks
 > **Primary action:** [Explore the Decks](#decks)
 
@@ -146,7 +146,7 @@ marketplaces, plugin manifests, and selective installation.
 
 ## Maturity
 
-Control Decks 0.x is intentionally experimental. All Decks still use lockstep
-distribution metadata `0.1.0` while their boundaries are tested in daily use.
-The tagged `v0.1.0` release is the historical 48-Card baseline; the current
-54-Card `main` tree is unreleased.
+Control Decks 0.x is intentionally experimental. The tagged `v0.1.0` release
+is the historical 48-Card baseline. The 54-Card catalogue is the `0.2.0`
+release candidate; each Deck keeps its independent `0.1.0` plugin and
+Equipment version until its own contract changes.

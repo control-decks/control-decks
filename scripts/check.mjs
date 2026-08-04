@@ -166,10 +166,15 @@ if (codexMarketplace.plugins.length !== 11) {
   fail("the Codex marketplace must expose exactly 11 Deck plugins");
 }
 
+const packageManifest = await readJson("package.json");
+if (packageManifest.version !== "0.2.0") {
+  fail("the catalogue release candidate must be 0.2.0");
+}
+
 const readme = await readFile(join(root, "README.md"), "utf8");
 const normalizedReadme = readme.replace(/\s+/g, " ");
 for (const required of [
-  "unreleased and ahead of tagged `v0.1.0`",
+  "`0.2.0` release candidate for HACP Draft 0.4",
   "3 Games · 11 Decks · 54 Cards · 21 Wave 1 provider skills",
   "https://open-workplace.org/PROTOCOL.md",
   "The Session and Conversation Games depend on HACP, not Open Workplace.",
