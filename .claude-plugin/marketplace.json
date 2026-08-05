@@ -1,0 +1,119 @@
+{
+  "name": "control-decks",
+  "plugins": [
+    {
+      "name": "session-intents",
+      "source": "./decks/session-intents",
+      "description": "Give a session one explicit operating intent.",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    },
+    {
+      "name": "session-lifecycle",
+      "source": "./decks/session-lifecycle",
+      "description": "Open, rename, hand off, refresh, and close tasks.",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    },
+    {
+      "name": "session-orchestration",
+      "source": "./decks/session-orchestration",
+      "description": "Allocate bounded parallel or delegated work.",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    },
+    {
+      "name": "session-hygiene",
+      "source": "./decks/session-hygiene",
+      "description": "Keep long-lived sessions and their Home metadata clean.",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    },
+    {
+      "name": "conversation-extension",
+      "source": "./decks/conversation-extension",
+      "description": "Move a thought one useful step beyond its current edge.",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    },
+    {
+      "name": "conversation-focus",
+      "source": "./decks/conversation-focus",
+      "description": "Change the semantic scale or axis of the current object.",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    },
+    {
+      "name": "conversation-evidence",
+      "source": "./decks/conversation-evidence",
+      "description": "Expose concrete evidence and examples around a thought.",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    },
+    {
+      "name": "conversation-view",
+      "source": "./decks/conversation-view",
+      "description": "Render relationships and sequence without changing substance.",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    },
+    {
+      "name": "hairness-context",
+      "source": "./decks/hairness-context",
+      "description": "Bind conversation to resolved Home, Workspace, Workstream, or Target context.",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    },
+    {
+      "name": "hairness-routing",
+      "source": "./decks/hairness-routing",
+      "description": "Refresh and route work through resolved Home identities.",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    },
+    {
+      "name": "hairness-operations",
+      "source": "./decks/hairness-operations",
+      "description": "Delegate bounded contextual decisions and Home maintenance.",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    }
+  ],
+  "owner": {
+    "name": "control-decks",
+    "url": "https://github.com/control-decks"
+  }
+}
